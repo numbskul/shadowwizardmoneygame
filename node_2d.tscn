@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://ywvnq54cmtpx"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_vxusi"]
+[ext_resource type="Texture2D" uid="uid://bccx0mqetk5ox" path="res://wizard.PNG" id="2_7j8da"]
+[ext_resource type="Texture2D" uid="uid://cwgfnnrdlxcq8" path="res://arms.PNG" id="3_dsmdh"]
+[ext_resource type="Texture2D" uid="uid://do8eracs0jpau" path="res://Cobbletile.png" id="3_kviko"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8n5nl"]
+radius = 45.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+rotation = 1.5708
+motion_mode = 1
+script = ExtResource("1_vxusi")
+
+[node name="Body" type="Sprite2D" parent="CharacterBody2D"]
+y_sort_enabled = true
+texture = ExtResource("2_7j8da")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-20, 0)
+shape = SubResource("CircleShape2D_8n5nl")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+rotation = -1.5708
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="Arms" type="Sprite2D" parent="CharacterBody2D"]
+z_index = -1
+texture = ExtResource("3_dsmdh")
+offset = Vector2(25, 0)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -5
+offset_left = -594.0
+offset_top = -343.0
+offset_right = 606.0
+offset_bottom = 361.0
+texture = ExtResource("3_kviko")
