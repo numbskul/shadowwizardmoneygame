@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dlf0vrw0adotc" path="res://Bullet_sheet.png" id="2_5vvkj"]
 [ext_resource type="Texture2D" uid="uid://bcxnknhco8qvu" path="res://Fun_Particle.png" id="3_f1sa7"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n2552"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_henpq"]
 atlas = ExtResource("2_5vvkj")
 region = Rect2(0, 0, 64, 64)
@@ -85,18 +83,19 @@ angular_velocity_max = 220.65
 radial_velocity_min = -586.02
 radial_velocity_max = 424.73
 gravity = Vector3(0, 98, 0)
+scale_min = 0.3
+scale_max = 0.7
 hue_variation_min = -0.12
 hue_variation_max = 0.06
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bcw7n"]
+radius = 2.0
+height = 20.0
+
 [node name="Projectile" type="Node2D"]
 rotation = 1.5708
-scale = Vector2(3.75, 3.75)
+scale = Vector2(2, 2)
 script = ExtResource("1_85flj")
-
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-shape = SubResource("CapsuleShape2D_n2552")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 1)
@@ -111,3 +110,8 @@ process_material = SubResource("ParticleProcessMaterial_cgt0h")
 texture = ExtResource("3_f1sa7")
 lifetime = 0.3
 randomness = 0.35
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_bcw7n")
