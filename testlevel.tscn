@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=4 uid="uid://cak3uflt3a3q5"]
+
+[ext_resource type="Texture2D" uid="uid://gn2xko1o8kuo" path="res://Cobbetile2.png" id="1_it6qc"]
+[ext_resource type="Texture2D" uid="uid://nmmhta1uxv2d" path="res://Cobbetile3.png" id="2_granj"]
+[ext_resource type="Texture2D" uid="uid://do8eracs0jpau" path="res://Cobbletile.png" id="3_20qi8"]
+[ext_resource type="Script" path="res://testlevel.gd" id="4_8hx15"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pkvsu"]
+texture = ExtResource("1_it6qc")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjx7x"]
+texture = ExtResource("2_granj")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca6qq"]
+texture = ExtResource("3_20qi8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6qs72"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_pkvsu")
+sources/1 = SubResource("TileSetAtlasSource_pjx7x")
+sources/2 = SubResource("TileSetAtlasSource_ca6qq")
+
+[node name="TileMapLayer" type="TileMapLayer"]
+z_index = -50
+tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAQAAAAAAAAD/////AQAAAAAAAAABAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAD+//7/AgAAAAAAAAABAP7/AgAAAAAAAAAAAPz/AgAAAAAAAAD9//3/AQAAAAAAAAACAAIAAgAAAAAAAAD7/wEAAgAAAAAAAAADAAAAAgAAAAAAAAD8/wEAAgAAAAAAAAD+/wIAAQAAAAAAAAD+/wAAAgAAAAAAAAACAP7/AgAAAAAAAAD7////AgAAAAAAAAAEAP7/AgAAAAAAAAAAAAMAAgAAAAAAAAADAAQAAgAAAAAAAAD+/wEAAgAAAAAAAAD9/wAAAQAAAAAAAAD9//7/AgAAAAAAAAD///3/AQAAAAAAAAACAAAAAQAAAAAAAAD//wIAAQAAAAAAAAD9/wIAAQAAAAAAAAD9/wEAAQAAAAAAAAD8////AQAAAAAAAAD+//3/AQAAAAAAAAAAAP3/AQAAAAAAAAABAP3/AQAAAAAAAAACAP//AQAAAAAAAAABAAIAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAD+////AQAAAAAAAAD9////AQAAAAAAAAD///7/AQAAAAAAAAAAAP7/AQAAAAAAAAABAP//AQAAAAAAAAD8/wAAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAABAAMAAQAAAAAAAAD//wMAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_6qs72")
+script = ExtResource("4_8hx15")
