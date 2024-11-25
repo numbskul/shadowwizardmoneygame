@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_vxusi"]
 [ext_resource type="Texture2D" uid="uid://bccx0mqetk5ox" path="res://wizard.PNG" id="2_7j8da"]
 [ext_resource type="Texture2D" uid="uid://cwgfnnrdlxcq8" path="res://arms.PNG" id="3_dsmdh"]
-[ext_resource type="AudioStream" path="res://magic_shoot_sfx_2.wav" id="4_rh7gs"]
+[ext_resource type="AudioStream" uid="uid://df547pe0yjq3t" path="res://magic_shoot_sfx_2.wav" id="4_rh7gs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8n5nl"]
 radius = 36.0
