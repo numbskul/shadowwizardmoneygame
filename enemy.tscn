@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cffs073s3tw53"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_s6t0y"]
-[ext_resource type="Texture2D" path="res://enemy wizard.png" id="1_uhrei"]
+[ext_resource type="Texture2D" uid="uid://bx238icad4r5x" path="res://enemy wizard.png" id="1_uhrei"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7rnh"]
 radius = 438.029
@@ -23,8 +23,8 @@ visibility_layer = 9
 shape = SubResource("CircleShape2D_r7rnh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 50
-y_sort_enabled = true
+z_index = 5
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_uhrei")
 offset = Vector2(26, 0)
 
