@@ -9,8 +9,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if $RayCast2D.is_colliding():
-		if $RayCast2D.get_collider() is CharacterBody2D:
-			$RayCast2D.get_collider().queue_clear()
 		rotate(90)
 		$AudioStreamPlayer2D.play()
 	else:

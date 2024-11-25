@@ -25,6 +25,8 @@ func _process(delta: float) -> void:
 	# Set rotation to face mouse
 	rotate(get_angle_to(get_global_mouse_position()))
 	
+	
+	
 	# Check for shoot
 	if Input.is_action_just_pressed("shoot") && cooldown <= 0:
 		$AudioStreamPlayer2D.play()
