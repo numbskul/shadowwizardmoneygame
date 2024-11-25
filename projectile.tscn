@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://b87mx1yhcv4ga"]
+[gd_scene load_steps=16 format=3 uid="uid://b87mx1yhcv4ga"]
 
 [ext_resource type="Script" path="res://projectile.gd" id="1_85flj"]
 [ext_resource type="Texture2D" uid="uid://dlf0vrw0adotc" path="res://Bullet_sheet.png" id="2_5vvkj"]
 [ext_resource type="Texture2D" uid="uid://bcxnknhco8qvu" path="res://Fun_Particle.png" id="3_f1sa7"]
+[ext_resource type="AudioStream" uid="uid://hcnktf3bh5l2" path="res://magic_shoot_bounce_sfx (2).wav" id="4_sd5nt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_henpq"]
 atlas = ExtResource("2_5vvkj")
@@ -112,6 +113,16 @@ lifetime = 0.3
 randomness = 0.35
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 10
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CapsuleShape2D_bcw7n")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-8.50698e-05, -23.5)
+collision_mask = 11
+collide_with_areas = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_sd5nt")
