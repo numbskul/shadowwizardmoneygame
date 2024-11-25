@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://uh4t8agi0tvw"]
+
+[ext_resource type="Texture2D" uid="uid://dvxhinu1id054" path="res://enemy wizard.png" id="1_uhrei"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_uhrei")
+offset = Vector2(30, 0)
