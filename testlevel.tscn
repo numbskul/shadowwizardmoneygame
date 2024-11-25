@@ -55,7 +55,7 @@ collision_layer = 11
 collision_mask = 11
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-153, -19.5, 153.5, -20.5, 151, 660.5, -24, 663.5, -27, 407.5, -407, 406.5, -411, 45.5, -157, 41.5, -154, -70.5, -487, -81.5, -496, 729.5, 288, 734.5, 255, -111.5, -150, -100.5)
+polygon = PackedVector2Array(-153, -19.5, 153.5, -20.5, 151, 660.5, -24, 663.5, -27, 407.5, -407, 406.5, -411, 45.5, -157, 41.5, -149.5, -98, -487, -81.5, -496, 729.5, 288, 734.5, 255, -111.5, -150, -100.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_2kesh")
