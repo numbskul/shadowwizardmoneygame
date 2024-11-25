@@ -8,6 +8,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position += Vector2.UP.rotated(rotation) * 15;
-	
+	if $RayCast2D.is_colliding():
+		rotate(90)
+		$AudioStreamPlayer2D.play()
+	else:
+		position += Vector2.UP.rotated(rotation) * 15;
 	pass
