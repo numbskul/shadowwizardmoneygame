@@ -101,7 +101,7 @@ script = ExtResource("1_hr5oa")
 scale = Vector2(0.5, 1)
 sprite_frames = SubResource("SpriteFrames_xrmof")
 autoplay = "default"
-frame_progress = 0.689503
+frame_progress = 0.956183
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
 z_index = -1
