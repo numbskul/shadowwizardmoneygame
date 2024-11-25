@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do8eracs0jpau"
-path="res://.godot/imported/Cobbletile.png-d604d8b035dd2d4ac93f3fc0d527d979.ctex"
+uid="uid://cumd8jx7fldli"
+path="res://.godot/imported/Fun_Particle.png-11ef9397519fff72d3520908abab681e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cobbletile.png"
-dest_files=["res://.godot/imported/Cobbletile.png-d604d8b035dd2d4ac93f3fc0d527d979.ctex"]
+source_file="res://Fun_Particle.png"
+dest_files=["res://.godot/imported/Fun_Particle.png-11ef9397519fff72d3520908abab681e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nmmhta1uxv2d"
-path="res://.godot/imported/Cobbetile3.png-79aa56d0a44573b3e229848c513fddd6.ctex"
+uid="uid://dkmdyo612v7ly"
+path="res://.godot/imported/Bullet_sheet.png-dcb32c07402a2c21e3898a3a877e302e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cobbetile3.png"
-dest_files=["res://.godot/imported/Cobbetile3.png-79aa56d0a44573b3e229848c513fddd6.ctex"]
+source_file="res://Bullet_sheet.png"
+dest_files=["res://.godot/imported/Bullet_sheet.png-dcb32c07402a2c21e3898a3a877e302e.ctex"]
 
 [params]
 
