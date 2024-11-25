@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://cak3uflt3a3q5"]
+[gd_scene load_steps=6 format=4 uid="uid://cak3uflt3a3q5"]
 
 [ext_resource type="Texture2D" uid="uid://dn2q2l03mww4d" path="res://wall_tileset.png" id="1_wuqat"]
 [ext_resource type="Script" path="res://testlevel.gd" id="4_8hx15"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f1agl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78yoy"]
 texture = ExtResource("1_wuqat")
@@ -23,8 +25,8 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSet" id="TileSet_aku5a"]
 tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 3
-physics_layer_0/collision_mask = 3
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_f1agl")
 sources/0 = SubResource("TileSetAtlasSource_78yoy")
 
 [node name="TileMapLayer" type="TileMapLayer"]

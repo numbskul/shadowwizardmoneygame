@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 	
 	position += vel * delta;
 	
+	
 	# Check for shoot
 	if Input.is_action_just_pressed("shoot"):
 		var scene = preload("res://projectile.tscn")
