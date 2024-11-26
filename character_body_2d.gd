@@ -13,6 +13,7 @@ func get_input():
 	velocity = input_dir * speed
 
 func _physics_process(delta):
+	#no idea how this works, theft is good
 	get_input()
 	move_and_slide()
 	
@@ -25,14 +26,18 @@ func _process(delta: float) -> void:
 	# Set rotation to face mouse
 	rotate(get_angle_to(get_global_mouse_position()))
 	
-	
-	
 	# Check for shoot
 	if Input.is_action_just_pressed("shoot") && cooldown <= 0:
+		
+		#play sfx
 		$AudioStreamPlayer2D.play()
+		#set cooldown
 		cooldown = 40
+		#load bullet
 		var scene = preload("res://projectile.tscn")
 		var instance = scene.instantiate()
+		#set rot & pos, pos is offset to avoid spawning inside player
 		instance.rotate(rotation)
 		instance.position = position + (Vector2.RIGHT.rotated(rotation) * 50)
+		#create bullet in world
 		get_parent().add_child(instance)
