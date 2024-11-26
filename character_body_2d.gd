@@ -14,7 +14,7 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	move_and_collide(velocity * delta)
+	move_and_slide()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -34,5 +34,5 @@ func _process(delta: float) -> void:
 		var scene = preload("res://projectile.tscn")
 		var instance = scene.instantiate()
 		instance.rotate(rotation)
-		instance.position = position
+		instance.position = position + (Vector2.RIGHT.rotated(rotation) * 50)
 		get_parent().add_child(instance)
