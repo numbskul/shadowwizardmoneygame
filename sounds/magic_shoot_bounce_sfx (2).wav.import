@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b3uiub3xx5v16"
-path="res://.godot/imported/magic_shoot_bounce_sfx (2).wav-7367565661f39ec91c938086aebcfbe1.sample"
+path="res://.godot/imported/magic_shoot_bounce_sfx (2).wav-d6dd8435d8310e66b08de63db4432589.sample"
 
 [deps]
 
-source_file="res://magic_shoot_bounce_sfx (2).wav"
-dest_files=["res://.godot/imported/magic_shoot_bounce_sfx (2).wav-7367565661f39ec91c938086aebcfbe1.sample"]
+source_file="res://sounds/magic_shoot_bounce_sfx (2).wav"
+dest_files=["res://.godot/imported/magic_shoot_bounce_sfx (2).wav-d6dd8435d8310e66b08de63db4432589.sample"]
 
 [params]
 

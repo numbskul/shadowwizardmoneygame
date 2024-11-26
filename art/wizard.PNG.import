@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpp0221xpa41m"
-path="res://.godot/imported/floortile_sheet.png-5606868ef029e7a9e74e85eadf801ad9.ctex"
+uid="uid://bccx0mqetk5ox"
+path="res://.godot/imported/wizard.PNG-026ed235cfec48b3eb323f7f60dc2b85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://floortile_sheet.png"
-dest_files=["res://.godot/imported/floortile_sheet.png-5606868ef029e7a9e74e85eadf801ad9.ctex"]
+source_file="res://art/wizard.PNG"
+dest_files=["res://.godot/imported/wizard.PNG-026ed235cfec48b3eb323f7f60dc2b85.ctex"]
 
 [params]
 

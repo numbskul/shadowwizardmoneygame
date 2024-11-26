@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx238icad4r5x"
-path="res://.godot/imported/enemy wizard.png-2b418977877dfb94ec5c57cdbd25ea42.ctex"
+uid="uid://boex8cj62bbox"
+path="res://.godot/imported/wall_tileset.png-0396fe1e0eba7f344d09d7786f3fba2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy wizard.png"
-dest_files=["res://.godot/imported/enemy wizard.png-2b418977877dfb94ec5c57cdbd25ea42.ctex"]
+source_file="res://art/wall_tileset.png"
+dest_files=["res://.godot/imported/wall_tileset.png-0396fe1e0eba7f344d09d7786f3fba2e.ctex"]
 
 [params]
 

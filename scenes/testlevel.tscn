@@ -1,45 +1,33 @@
 [gd_scene load_steps=10 format=4 uid="uid://dtvorr3ckoqes"]
 
-[ext_resource type="Texture2D" uid="uid://boex8cj62bbox" path="res://wall_tileset.png" id="1_wuqat"]
-[ext_resource type="Texture2D" uid="uid://dpp0221xpa41m" path="res://floortile_sheet.png" id="2_ftqdb"]
-[ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://siwen_game_music.wav" id="4_2kesh"]
-[ext_resource type="Script" path="res://testlevel.gd" id="4_8hx15"]
-[ext_resource type="Script" path="res://audio_stream_player.gd" id="5_tmuhn"]
+[ext_resource type="Texture2D" uid="uid://boex8cj62bbox" path="res://art/wall_tileset.png" id="1_ghfo2"]
+[ext_resource type="Texture2D" uid="uid://dpp0221xpa41m" path="res://art/floortile_sheet.png" id="2_kig43"]
+[ext_resource type="Script" path="res://scripts/testlevel.gd" id="3_hpl7d"]
+[ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="4_ohke2"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="5_gktec"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f1agl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78yoy"]
-texture = ExtResource("1_wuqat")
+texture = ExtResource("1_ghfo2")
 margins = Vector2i(1, 1)
 separation = Vector2i(2, 2)
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.29913, 32, -32, 32, -32, -32, 32, -32, 32, 10.9478, 7.59282, 10.5946)
 1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -8.29913, 32, 32, -32, 32, -32, -32, 10.9478, -32, 10.5946, -7.59282)
 2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.29913, -32, 32, -32, 32, 32, -32, 32, -32, -10.9478, -7.59282, -10.5946)
 3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 8.29913, -32, -32, 32, -32, 32, 32, -10.9478, 32, -10.5946, 7.59282)
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 9.88832, -32, 9.35859, -32, -32)
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(13.0667, -32, 10.5946, 8.65228, -32, 8.29913, -32, -32)
 2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 13.0667, -8.65228, 10.5946, -8.29913, -32, 32, -32)
 3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.0667, 32, -10.5946, -8.65228, 32, -8.29913, 32, 32)
 0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -13.0667, 8.65228, -10.5946, 8.29913, 32, -32, 32)
 1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.1802, 32, -5.82705, -32, 32, -32, 32, 32)
 2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 9.88832, -32, 9.35859, 32, -32, 32)
 3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -6.1802, 32, -5.82705, 32, 32, -32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bytfc"]
-texture = ExtResource("2_ftqdb")
+texture = ExtResource("2_kig43")
 margins = Vector2i(1, 0)
 separation = Vector2i(2, 0)
 texture_region_size = Vector2i(64, 64)
@@ -60,11 +48,17 @@ sources/1 = SubResource("TileSetAtlasSource_bytfc")
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD9////AAAAAAAAAAD+////AAAAAAEAAAD/////AAAAAAEAAAAAAP//AAAAAAEAAAABAP//AAAAAAEAAAACAP//AAADAAAAAAACAAAAAAABAAIAAAACAAEAAAABAAIAAAACAAIAAAABAAIAAAACAAMAAAABAAIAAAACAAQAAAABAAIAAAD9/wAAAAABAAEAAAD8/wAAAAAAAAEAAAD7/wAAAAAAAAEAAAD6/wAAAAAAAAEAAAD5/wAAAAAAAAAAAAD5/wEAAAACAAIAAAD5/wIAAAACAAIAAAD5/wMAAAACAAIAAAD5/wQAAAACAAIAAAD5/wUAAAACAAIAAAD5/wYAAAABAAAAAAD6/wYAAAADAAIAAAD7/wYAAAADAAIAAAD8/wYAAAADAAIAAAD9/wYAAAADAAIAAAD+/wYAAAADAAIAAAD//wYAAAAAAAIAAAD//wcAAAACAAIAAAD//wgAAAACAAIAAAD//wkAAAACAAIAAAACAAUAAAABAAIAAAACAAYAAAABAAIAAAACAAcAAAABAAIAAAACAAgAAAABAAIAAAACAAkAAAABAAIAAAACAAoAAAACAAAAAAD//woAAAABAAAAAAAAAAoAAAADAAIAAAABAAoAAAADAAIAAAD//wIAAQAAAAAAAAD//wUAAQACAAAAAAD+/wQAAQACAAAAAAD9/wQAAQABAAAAAAD8/wMAAQADAAAAAAD9/wIAAQACAAAAAAD9/wMAAQAAAAAAAAD+/wMAAQABAAAAAAD//wMAAQABAAAAAAD//wQAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAEAAAAAAD+/wIAAQABAAAAAAD8/wIAAQABAAAAAAD8/wQAAQABAAAAAAD6/wEAAQADAAAAAAD6/wIAAQADAAAAAAD6/wMAAQADAAAAAAD7/wMAAQACAAAAAAD9/wEAAQADAAAAAAD7/wIAAQADAAAAAAD7/wEAAQACAAAAAAD8/wEAAQADAAAAAAD7/wQAAQACAAAAAAD6/wQAAQACAAAAAAD6/wUAAQAAAAAAAAD+/wEAAQACAAAAAAD//wEAAQAEAAAAAAD//wAAAQAEAAAAAAAAAAAAAQAEAAAAAAD9/wUAAQAAAAAAAAD+/wUAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAABAAcAAQACAAAAAAABAAgAAQACAAAAAAABAAAAAQAEAAAAAAABAAEAAQAEAAAAAAAAAAEAAQAEAAAAAAD+/wAAAQAEAAAAAAABAAIAAQAEAAAAAAAAAAIAAQAEAAAAAAABAAQAAQACAAAAAAABAAUAAQACAAAAAAABAAYAAQAAAAAAAAAAAAkAAQACAAAAAAAAAAQAAQACAAAAAAD7/wUAAQACAAAAAAD8/wUAAQAAAAAAAAABAAkAAQAAAAAAAAAAAAgAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_aku5a")
-use_kinematic_bodies = true
-script = ExtResource("4_8hx15")
+script = ExtResource("3_hpl7d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 11
+collision_mask = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-153, -19.5, 153.5, -20.5, 151, 660.5, -24, 663.5, -27, 407.5, -407, 406.5, -411, 45.5, -157, 41.5, -149.5, -98, -487, -81.5, -496, 729.5, 288, 734.5, 255, -111.5, -150, -100.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_2kesh")
+stream = ExtResource("4_ohke2")
 volume_db = -25.752
 autoplay = true
-script = ExtResource("5_tmuhn")
+script = ExtResource("5_gktec")

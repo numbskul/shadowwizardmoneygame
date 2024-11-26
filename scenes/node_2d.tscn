@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://ywvnq54cmtpx"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_vxusi"]
-[ext_resource type="Texture2D" uid="uid://bccx0mqetk5ox" path="res://wizard.PNG" id="2_7j8da"]
-[ext_resource type="Texture2D" uid="uid://cwgfnnrdlxcq8" path="res://arms.PNG" id="3_dsmdh"]
-[ext_resource type="AudioStream" uid="uid://df547pe0yjq3t" path="res://magic_shoot_sfx_2.wav" id="4_rh7gs"]
+[ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_3ucnu"]
+[ext_resource type="Texture2D" uid="uid://bccx0mqetk5ox" path="res://art/wizard.PNG" id="2_5joo8"]
+[ext_resource type="Texture2D" uid="uid://cwgfnnrdlxcq8" path="res://art/arms.PNG" id="3_wvt2f"]
+[ext_resource type="AudioStream" uid="uid://df547pe0yjq3t" path="res://sounds/magic_shoot_sfx_2.wav" id="4_7y1pm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8n5nl"]
 radius = 36.0
@@ -17,11 +17,11 @@ rotation = 1.5708
 collision_layer = 4
 collision_mask = 3
 motion_mode = 1
-script = ExtResource("1_vxusi")
+script = ExtResource("1_3ucnu")
 
 [node name="Body" type="Sprite2D" parent="CharacterBody2D"]
 y_sort_enabled = true
-texture = ExtResource("2_7j8da")
+texture = ExtResource("2_5joo8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_8n5nl")
@@ -33,8 +33,8 @@ position_smoothing_speed = 3.0
 
 [node name="Arms" type="Sprite2D" parent="CharacterBody2D"]
 z_index = -1
-texture = ExtResource("3_dsmdh")
+texture = ExtResource("3_wvt2f")
 offset = Vector2(25, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
-stream = ExtResource("4_rh7gs")
+stream = ExtResource("4_7y1pm")

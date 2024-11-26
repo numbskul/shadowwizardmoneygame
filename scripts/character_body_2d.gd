@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 var speed = 400;
 var cooldown = 0;
-@onready var projectile = preload("res://projectilev2.tscn")
+
+@onready var projectile = preload("res://scenes/projectile.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,12 +12,12 @@ func _ready() -> void:
 func shoot():
 	var instance = projectile.instantiate()
 	#set rot & pos, pos is offset to avoid spawning inside player
-	instance.dir = rotation
-	instance.spawn_rot = rotation
-	instance.spawn_pos = position + (Vector2.RIGHT.rotated(rotation) * 50)
+	var rot = get_parent().rotation
+	instance.dir = rot
+	instance.spawn_rot = rot
+	instance.spawn_pos = position + (Vector2.RIGHT.rotated(rot) * 50)
 	#create bullet in world
 	get_parent().add_child.call_deferred(instance)
-
 
 func get_input():
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -44,10 +45,4 @@ func _process(delta: float) -> void:
 		#set cooldown
 		cooldown = 15
 		#load bullet
-		var scene = preload("res://projectile.tscn")
-		var instance = scene.instantiate()
-		#set rot & pos, pos is offset to avoid spawning inside player
-		instance.rotate(rotation)
-		instance.position = position + (Vector2.RIGHT.rotated(rotation) * 50)
-		#create bullet in world
-		get_parent().add_child(instance)
+		shoot()

@@ -1,4 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfke2asb6p5up"]
+[gd_scene load_steps=13 format=3 uid="uid://bfke2asb6p5up"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_kl753"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ccfba"]
 region = Rect2(0, 0, 64, 64)
@@ -83,6 +85,7 @@ height = 20.0
 [node name="Projectile" type="Node2D"]
 rotation = 1.5708
 scale = Vector2(2, 2)
+script = ExtResource("1_kl753")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 1)

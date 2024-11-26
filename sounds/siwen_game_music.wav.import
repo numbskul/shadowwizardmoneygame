@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dytl671k8jrlw"
-path="res://.godot/imported/siwen_game_music.wav-d079fd8cf15ff7ac493ea080bfa6c381.sample"
+path="res://.godot/imported/siwen_game_music.wav-91a5b3e28256c39a7fedf6b093ec06df.sample"
 
 [deps]
 
-source_file="res://siwen_game_music.wav"
-dest_files=["res://.godot/imported/siwen_game_music.wav-d079fd8cf15ff7ac493ea080bfa6c381.sample"]
+source_file="res://sounds/siwen_game_music.wav"
+dest_files=["res://.godot/imported/siwen_game_music.wav-91a5b3e28256c39a7fedf6b093ec06df.sample"]
 
 [params]
 

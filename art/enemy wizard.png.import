@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkmdyo612v7ly"
-path="res://.godot/imported/Bullet_sheet.png-dcb32c07402a2c21e3898a3a877e302e.ctex"
+uid="uid://bx238icad4r5x"
+path="res://.godot/imported/enemy wizard.png-f712f211201570e64d93169c3356aac5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bullet_sheet.png"
-dest_files=["res://.godot/imported/Bullet_sheet.png-dcb32c07402a2c21e3898a3a877e302e.ctex"]
+source_file="res://art/enemy wizard.png"
+dest_files=["res://.godot/imported/enemy wizard.png-f712f211201570e64d93169c3356aac5.ctex"]
 
 [params]
 

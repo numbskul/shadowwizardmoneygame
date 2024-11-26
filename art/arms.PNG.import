@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cumd8jx7fldli"
-path="res://.godot/imported/Fun_Particle.png-11ef9397519fff72d3520908abab681e.ctex"
+uid="uid://cwgfnnrdlxcq8"
+path="res://.godot/imported/arms.PNG-b397e8adbbcdb3854ff01f07f5dfb793.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fun_Particle.png"
-dest_files=["res://.godot/imported/Fun_Particle.png-11ef9397519fff72d3520908abab681e.ctex"]
+source_file="res://art/arms.PNG"
+dest_files=["res://.godot/imported/arms.PNG-b397e8adbbcdb3854ff01f07f5dfb793.ctex"]
 
 [params]
 
