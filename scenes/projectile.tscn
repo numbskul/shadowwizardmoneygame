@@ -90,12 +90,14 @@ hue_variation_min = -0.12
 hue_variation_max = 0.06
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_enjdd"]
-radius = 3.16228
+radius = 4.52769
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_ucvcs")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
 scale = Vector2(0.5, 1)
 sprite_frames = SubResource("SpriteFrames_xrmof")
 autoplay = "default"
@@ -116,3 +118,4 @@ volume_db = -16.838
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_enjdd")
+debug_color = Color(0.981433, 0, 0.371099, 0.42)

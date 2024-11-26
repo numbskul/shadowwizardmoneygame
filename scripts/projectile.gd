@@ -10,8 +10,7 @@ var spawn_pos : Vector2
 func _ready() -> void:
 	position = spawn_pos
 	rotation = spawn_rot
-	get_parent().rotation = spawn_rot
-	velocity = Vector2.UP.rotated(get_parent().get_rotation()) * speed
+	velocity = Vector2.RIGHT.rotated(get_rotation()) * speed
 	pass # Replace with function body.
 
 func _physics_process(delta):

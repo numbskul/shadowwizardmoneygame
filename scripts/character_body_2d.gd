@@ -14,10 +14,10 @@ func shoot():
 	#set rot & pos, pos is offset to avoid spawning inside player
 	var rot = get_parent().rotation
 	instance.dir = rot
-	instance.spawn_rot = rot
-	instance.spawn_pos = position + (Vector2.RIGHT.rotated(rot) * 50)
+	instance.spawn_rot = rotation
+	instance.spawn_pos = position + (Vector2.UP.rotated(rot) * 50)
 	#create bullet in world
-	get_parent().add_child.call_deferred(instance)
+	get_tree().root.add_child(instance)
 
 func get_input():
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
