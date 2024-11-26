@@ -2,11 +2,21 @@ extends CharacterBody2D
 
 var speed = 400;
 var cooldown = 0;
-
+@onready var projectile = preload("res://projectilev2.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
+
+func shoot():
+	var instance = projectile.instantiate()
+	#set rot & pos, pos is offset to avoid spawning inside player
+	instance.dir = rotation
+	instance.spawn_rot = rotation
+	instance.spawn_pos = position + (Vector2.RIGHT.rotated(rotation) * 50)
+	#create bullet in world
+	get_parent().add_child.call_deferred(instance)
+
 
 func get_input():
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -27,12 +37,12 @@ func _process(delta: float) -> void:
 	rotate(get_angle_to(get_global_mouse_position()))
 	
 	# Check for shoot
-	if Input.is_action_just_pressed("shoot") && cooldown <= 0:
+	if Input.is_action_pressed("shoot") && cooldown <= 0:
 		
 		#play sfx
 		$AudioStreamPlayer2D.play()
 		#set cooldown
-		cooldown = 40
+		cooldown = 15
 		#load bullet
 		var scene = preload("res://projectile.tscn")
 		var instance = scene.instantiate()

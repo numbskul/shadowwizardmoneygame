@@ -1,6 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqxuwbx7wnaxa"]
+[gd_scene load_steps=16 format=3 uid="uid://bqxuwbx7wnaxa"]
 
-<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://projectile.gd" id="1_85flj"]
 [ext_resource type="Texture2D" uid="uid://dkmdyo612v7ly" path="res://Bullet_sheet.png" id="2_5vvkj"]
 [ext_resource type="Texture2D" uid="uid://cumd8jx7fldli" path="res://Fun_Particle.png" id="3_f1sa7"]
@@ -93,14 +92,10 @@ hue_variation_max = 0.06
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nrg81"]
 radius = 2.0
 height = 25.0
-=======
-[ext_resource type="PackedScene" uid="uid://1oraglk6pq82" path="res://projectilev2.tscn" id="1_vvtsu"]
->>>>>>> Stashed changes
 
 [node name="Projectile" type="Node2D"]
 rotation = 1.5708
 scale = Vector2(2, 2)
-<<<<<<< Updated upstream
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_85flj")
@@ -125,7 +120,3 @@ volume_db = -16.838
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_nrg81")
-=======
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_vvtsu")]
->>>>>>> Stashed changes

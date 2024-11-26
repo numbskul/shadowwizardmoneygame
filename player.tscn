@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://1b8qlpvi5qky"]
+[gd_scene load_steps=5 format=3 uid="uid://1b8qlpvi5qky"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_0up2q"]
 [ext_resource type="Texture2D" uid="uid://bccx0mqetk5ox" path="res://wizard.PNG" id="2_450ev"]
 [ext_resource type="Texture2D" uid="uid://cwgfnnrdlxcq8" path="res://arms.PNG" id="3_fx157"]
 [ext_resource type="AudioStream" uid="uid://df547pe0yjq3t" path="res://magic_shoot_sfx_2.wav" id="4_0vdid"]
@@ -16,7 +15,6 @@ scale = Vector2(0.5, 0.5)
 rotation = 1.5708
 collision_layer = 4
 motion_mode = 1
-script = ExtResource("1_0up2q")
 
 [node name="Body" type="Sprite2D" parent="CharacterBody2D"]
 y_sort_enabled = true
