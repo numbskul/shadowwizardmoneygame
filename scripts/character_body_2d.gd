@@ -15,10 +15,14 @@ func shoot():
 	var rot = get_parent().rotation
 	instance.dir = rot
 	instance.spawn_rot = rotation
-	instance.spawn_pos = position + (Vector2.UP.rotated(rot) * 50)
+	instance.spawn_pos = position + (Vector2.RIGHT.rotated(rotation) * 50)
 	#create bullet in world
 	get_tree().root.add_child(instance)
+	print("Shoot")
 
+func hit():
+	print("Game Over")
+	
 func get_input():
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = input_dir * speed
