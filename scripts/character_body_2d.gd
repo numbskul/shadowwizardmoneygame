@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-var speed = 400;
+var speed = 700;
 var cooldown = 0;
+var hp = 100;
 
 @onready var projectile = preload("res://scenes/projectile.tscn")
 
@@ -21,7 +22,7 @@ func shoot():
 	print("Shoot")
 
 func hit():
-	print("Game Over")
+	hp -= 5
 	
 func get_input():
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -35,6 +36,9 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	if hp <= 0:
+		print("Game Over!")
+	
 	if cooldown > 0:
 		cooldown -= 1;
 	
@@ -47,6 +51,6 @@ func _process(delta: float) -> void:
 		#play sfx
 		$AudioStreamPlayer2D.play()
 		#set cooldown
-		cooldown = 15
+		cooldown = 8
 		#load bullet
 		shoot()

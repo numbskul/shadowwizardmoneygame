@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-@export var speed = 800
+@export var speed = 1000
 
 var dir : float
 var spawn_rot : float
 var spawn_pos : Vector2
+var spawn_velocity : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
