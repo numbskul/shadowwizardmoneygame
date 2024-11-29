@@ -25,8 +25,8 @@ func shoot():
 	get_tree().root.add_child(instance)
 
 
-func hit():
-	hp -= randi_range(5,15)
+func hit(damage):
+	hp -= randi_range(damage - 2, damage + 2)
 	if hp < 0:
 		hp = 0
 	updateHP.emit(hp)

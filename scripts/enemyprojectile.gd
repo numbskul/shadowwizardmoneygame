@@ -23,7 +23,7 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision.get_normal())
 		rotation = velocity.angle()
 		if collision.get_collider().has_method("hit"):
-			collision.get_collider().hit()
+			collision.get_collider().hit(10)
 			queue_free()
 		if bounces <= 0:
 			queue_free()

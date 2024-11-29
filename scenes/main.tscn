@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://uw4pads0g1we"]
+[gd_scene load_steps=8 format=3 uid="uid://uw4pads0g1we"]
 
 [ext_resource type="PackedScene" uid="uid://dtvorr3ckoqes" path="res://scenes/testlevel.tscn" id="2_0qwg6"]
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="3_ogrg1"]
 [ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="4_c6wnh"]
 [ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="4_v6q6y"]
+[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="5_g7cya"]
 
 [sub_resource type="GDScript" id="GDScript_rg83i"]
 script/source = "extends Node
@@ -19,6 +20,11 @@ func _process(delta):
 	pass
 "
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_n6n00"]
+vertices = PackedVector2Array(9.96094, 376, -372.094, 376, -374.898, 78, -119.148, 78, 118.102, 202.992, 1333, 910.961, 1333, 1079, -52.1094, 1079, -53.8906, 911.961, 520.977, 909.969, 822.922, 908.961, 824.078, 760.023, 522.023, 377.969, 759.078, 527.023, 118.961, 633.07, 10.9609, 633.922, 117.961, 379.031, 1780.08, -116, 1781.92, 119.047, 1205.96, 122.047, 1034.97, -116, 1033.97, 204.008, 1206.96, 377.039, 757.922, 379.039, 1353.89, 334.969, 1718, 334.023, 1718, 758.023, 1351.9, 525.977, 116.102, 9.10938, -118.141, 11.8828)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9, 10), PackedInt32Array(11, 10, 9, 12, 13), PackedInt32Array(14, 15, 0, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 20, 19, 22), PackedInt32Array(4, 21, 22, 23, 12), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(27, 26, 11, 13), PackedInt32Array(23, 13, 12), PackedInt32Array(4, 12, 16, 0), PackedInt32Array(28, 4, 3, 29)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(126, -1, 128, 193, 1024, 194, 1025, -126, 1790, -126, 1792, 129, 1216, 132, 1217, 387, 768, 389, 769, 517, 1342, 516, 1344, 325, 1728, 324, 1728, 768, 834, 770, 833, 899, 1343, 901, 1343, 1089, -62, 1089, -64, 902, 511, 900, 512, 388, 128, 389, 129, 643, 1, 644, 0, 386, -382, 386, -385, 68, -129, 68, -128, 2)])
+
 [node name="Main" type="Node"]
 script = SubResource("GDScript_rg83i")
 
@@ -29,26 +35,24 @@ scale = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("4_c6wnh")]
 
-[node name="StationaryEnemy" parent="." instance=ExtResource("4_v6q6y")]
-position = Vector2(1069, 904)
+[node name="StationaryEnemy" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
+position = Vector2(1652, 1087)
 
-[node name="StationaryEnemy2" parent="." instance=ExtResource("4_v6q6y")]
-position = Vector2(2103, -167)
+[node name="StationaryEnemy2" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
+position = Vector2(2101, 297)
 
-[node name="StationaryEnemy3" parent="." instance=ExtResource("4_v6q6y")]
-position = Vector2(2998, 210)
+[node name="MovingEnemy" parent="." instance=ExtResource("5_g7cya")]
+position = Vector2(583, 1986)
 
-[node name="StationaryEnemy4" parent="." instance=ExtResource("4_v6q6y")]
-position = Vector2(626, 1860)
+[node name="MovingEnemy3" parent="." instance=ExtResource("5_g7cya")]
+position = Vector2(2625, 195)
 
-[node name="StationaryEnemy5" parent="." instance=ExtResource("4_v6q6y")]
-position = Vector2(1857, 1856)
+[node name="MovingEnemy2" parent="." instance=ExtResource("5_g7cya")]
+position = Vector2(1996, 1978)
 
-[node name="StationaryEnemy6" parent="." instance=ExtResource("4_v6q6y")]
-position = Vector2(2764, 697)
-
-[node name="StationaryEnemy7" parent="." instance=ExtResource("4_v6q6y")]
-position = Vector2(3109, 960)
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+scale = Vector2(2, 2)
+navigation_polygon = SubResource("NavigationPolygon_n6n00")
 
 [connection signal="gameover" from="Player" to="." method="_on_player_gameover"]
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]

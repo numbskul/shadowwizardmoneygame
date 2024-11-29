@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ijwy5dw1o2fj"]
+[gd_scene load_steps=5 format=3 uid="uid://de7rulgai1gm2"]
 
-[ext_resource type="Script" path="res://scripts/stationary_enemy.gd" id="1_3qplh"]
-[ext_resource type="Texture2D" uid="uid://bx238icad4r5x" path="res://art/enemy wizard.png" id="1_jebs1"]
+[ext_resource type="Script" path="res://scripts/moving_enemy.gd" id="1_oa75f"]
+[ext_resource type="Texture2D" uid="uid://bx238icad4r5x" path="res://art/enemy wizard.png" id="2_k11dc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tos1b"]
 radius = 43.1045
@@ -9,12 +9,12 @@ radius = 43.1045
 [sub_resource type="CircleShape2D" id="CircleShape2D_7codr"]
 radius = 900.0
 
-[node name="StationaryEnemy" type="CharacterBody2D"]
-script = ExtResource("1_3qplh")
+[node name="MovingEnemy" type="CharacterBody2D"]
+script = ExtResource("1_oa75f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(25, 0)
-texture = ExtResource("1_jebs1")
+texture = ExtResource("2_k11dc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tos1b")
@@ -25,10 +25,15 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_7codr")
-debug_color = Color(0.890196, 0.32549, 0, 0.109804)
+debug_color = Color(1, 0.0352941, 0, 0.117647)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(850, 0)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+debug_path_custom_point_size = 10.0
+debug_path_custom_line_width = 2.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
