@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxxdme4ellchi"]
+
+[ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_ugcky"]
+[ext_resource type="Texture2D" uid="uid://bccx0mqetk5ox" path="res://art/wizard.PNG" id="2_ywa64"]
+[ext_resource type="Texture2D" uid="uid://cwgfnnrdlxcq8" path="res://art/arms.PNG" id="3_k11pr"]
+[ext_resource type="AudioStream" uid="uid://df547pe0yjq3t" path="res://sounds/magic_shoot_sfx_2.wav" id="4_a18eg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dims"]
+radius = 36.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+rotation = 1.5708
+collision_layer = 5
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_ugcky")
+
+[node name="Body2" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("2_ywa64")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4dims")
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+rotation = -1.5708
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="Arms2" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("3_k11pr")
+offset = Vector2(25, 0)
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_a18eg")
+volume_db = -10.0
