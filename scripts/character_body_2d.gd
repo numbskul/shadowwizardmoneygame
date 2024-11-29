@@ -5,6 +5,7 @@ var cooldown = 0;
 var hp = 100;
 var alive = true
 signal gameover;
+signal updateHP;
 
 @onready var projectile = preload("res://scenes/projectile.tscn")
 
@@ -25,7 +26,10 @@ func shoot():
 
 
 func hit():
-	hp -= 5
+	hp -= randi_range(5,15)
+	if hp < 0:
+		hp = 0
+	updateHP.emit(hp)
 	# Flash red / screenshake / some sort of hit indicator
 	
 func get_input():

@@ -17,3 +17,4 @@ scale = Vector2(2, 2)
 
 [connection signal="gameover" from="Player" to="." method="_on_player_gameover"]
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]
+[connection signal="updateHP" from="Player" to="HUD" method="_on_player_update_hp"]
