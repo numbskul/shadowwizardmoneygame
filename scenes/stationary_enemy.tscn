@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ijwy5dw1o2fj"]
+
+[ext_resource type="Script" path="res://scripts/stationary_enemy.gd" id="1_3qplh"]
+[ext_resource type="Texture2D" uid="uid://bx238icad4r5x" path="res://art/enemy wizard.png" id="1_jebs1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tos1b"]
+radius = 43.1045
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7codr"]
+radius = 900.0
+
+[node name="StationaryEnemy" type="CharacterBody2D"]
+script = ExtResource("1_3qplh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(25, 0)
+texture = ExtResource("1_jebs1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tos1b")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7codr")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(700, 0)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

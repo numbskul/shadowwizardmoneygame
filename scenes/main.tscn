@@ -1,12 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://uw4pads0g1we"]
+[gd_scene load_steps=6 format=3 uid="uid://uw4pads0g1we"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_ntir0"]
 [ext_resource type="PackedScene" uid="uid://dtvorr3ckoqes" path="res://scenes/testlevel.tscn" id="2_0qwg6"]
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="3_ogrg1"]
 [ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="4_c6wnh"]
+[ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="4_v6q6y"]
+
+[sub_resource type="GDScript" id="GDScript_rg83i"]
+script/source = "extends Node
+
+signal displaygameover
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Main" type="Node"]
-script = ExtResource("1_ntir0")
+script = SubResource("GDScript_rg83i")
 
 [node name="Map & Music" parent="." instance=ExtResource("2_0qwg6")]
 scale = Vector2(2, 2)
@@ -14,6 +28,27 @@ scale = Vector2(2, 2)
 [node name="HUD" parent="." instance=ExtResource("3_ogrg1")]
 
 [node name="Player" parent="." instance=ExtResource("4_c6wnh")]
+
+[node name="StationaryEnemy" parent="." instance=ExtResource("4_v6q6y")]
+position = Vector2(1069, 904)
+
+[node name="StationaryEnemy2" parent="." instance=ExtResource("4_v6q6y")]
+position = Vector2(2103, -167)
+
+[node name="StationaryEnemy3" parent="." instance=ExtResource("4_v6q6y")]
+position = Vector2(2998, 210)
+
+[node name="StationaryEnemy4" parent="." instance=ExtResource("4_v6q6y")]
+position = Vector2(626, 1860)
+
+[node name="StationaryEnemy5" parent="." instance=ExtResource("4_v6q6y")]
+position = Vector2(1857, 1856)
+
+[node name="StationaryEnemy6" parent="." instance=ExtResource("4_v6q6y")]
+position = Vector2(2764, 697)
+
+[node name="StationaryEnemy7" parent="." instance=ExtResource("4_v6q6y")]
+position = Vector2(3109, 960)
 
 [connection signal="gameover" from="Player" to="." method="_on_player_gameover"]
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]

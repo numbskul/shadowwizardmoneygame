@@ -46,10 +46,10 @@ func _physics_process(delta):
 func _process(delta: float) -> void:
 	
 	if hp <= 0:
-		print("Game Over!")
 		gameover.emit()
 		alive = false
 		$CollisionShape2D2.disabled = true
+		velocity = Vector2.ZERO
 		hide()
 		
 	
