@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://dtvorr3ckoqes"]
+[gd_scene load_steps=9 format=4 uid="uid://dtvorr3ckoqes"]
 
 [ext_resource type="Texture2D" uid="uid://boex8cj62bbox" path="res://art/wall_tileset.png" id="1_ghfo2"]
 [ext_resource type="Texture2D" uid="uid://dpp0221xpa41m" path="res://art/floortile_sheet.png" id="2_kig43"]
 [ext_resource type="Script" path="res://scripts/testlevel.gd" id="3_hpl7d"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="4_ohke2"]
-[ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="5_gktec"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f1agl"]
 
@@ -64,6 +63,7 @@ script = ExtResource("3_hpl7d")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ohke2")
-volume_db = -15.0
+volume_db = -10.0
 autoplay = true
-script = ExtResource("5_gktec")
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

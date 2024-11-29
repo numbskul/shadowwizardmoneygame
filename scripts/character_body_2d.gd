@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 700;
 var cooldown = 0;
 var hp = 100;
+signal gameover;
 
 @onready var projectile = preload("res://scenes/projectile.tscn")
 
@@ -24,6 +25,7 @@ func shoot():
 
 func hit():
 	hp -= 5
+	# Flash red / screenshake / some sort of hit indicator
 	
 func get_input():
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -39,6 +41,7 @@ func _process(delta: float) -> void:
 	
 	if hp <= 0:
 		print("Game Over!")
+		gameover.emit()
 	
 	if cooldown > 0:
 		cooldown -= 1;

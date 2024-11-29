@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://khxp4dxmw42b"]
+[gd_scene load_steps=6 format=3 uid="uid://ddol0ssub1dna"]
 
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_btkoq"]
 [ext_resource type="Texture2D" uid="uid://bccx0mqetk5ox" path="res://art/wizard.PNG" id="2_43ddy"]
@@ -10,6 +10,7 @@ radius = 36.0
 
 [node name="Character" type="Node2D"]
 z_index = 10
+scale = Vector2(0.5, 0.5)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 rotation = 1.5708
@@ -38,3 +39,5 @@ offset = Vector2(25, 0)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("4_mjfr4")
 volume_db = -10.0
+
+[connection signal="gameover" from="CharacterBody2D" to="." method="_on_character_body_2d_gameover"]

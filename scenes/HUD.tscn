@@ -3,13 +3,40 @@
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_yh605"]
 [ext_resource type="FontFile" uid="uid://fvgovnnepf62" path="res://Jersey15-Regular.ttf" id="2_y586e"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_yh605")
 
-[node name="Label" type="Label" parent="."]
+[node name="HP" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("2_y586e")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 80
 text = "HP: X"
 metadata/_edit_use_anchors_ = true
+
+[node name="DeathMsg" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -11.5
+offset_right = 37.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_y586e")
+theme_override_font_sizes/font_size = 125
+text = "You Died!"
+
+[node name="Score" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_y586e")
+theme_override_font_sizes/font_size = 60
+text = "Score: "
