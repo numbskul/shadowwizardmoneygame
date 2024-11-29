@@ -65,11 +65,11 @@ func _process(delta):
 				shoot()
 				cooldown = 30
 		
-		var current_agent_position: Vector2 = global_position
-		var next_path_position: Vector2 = navigation_agent.get_next_path_position()
+	var current_agent_position: Vector2 = global_position
+	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
-		velocity = current_agent_position.direction_to(next_path_position) * movement_speed
-		move_and_slide()
+	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+	move_and_slide()
 	
 	pass
 
