@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
-var speed = 400;
+var speed = 700;
 var cooldown = 0;
+var hp = 100;
+var alive = true
+signal gameover;
+signal updateHP;
 
 @onready var projectile = preload("res://scenes/projectile.tscn")
 
@@ -12,20 +16,26 @@ func _ready() -> void:
 func shoot():
 	var instance = projectile.instantiate()
 	#set rot & pos, pos is offset to avoid spawning inside player
-	var rot = get_parent().rotation
+	var rot = rotation
+	var pos = global_position
 	instance.dir = rot
 	instance.spawn_rot = rotation
-	instance.spawn_pos = position + (Vector2.RIGHT.rotated(rotation) * 50)
+	instance.spawn_pos = pos + (Vector2.RIGHT.rotated(rotation) * 50)
 	#create bullet in world
 	get_tree().root.add_child(instance)
-	print("Shoot")
+
 
 func hit():
-	print("Game Over")
+	hp -= randi_range(5,15)
+	if hp < 0:
+		hp = 0
+	updateHP.emit(hp)
+	# Flash red / screenshake / some sort of hit indicator
 	
 func get_input():
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = input_dir * speed
+	if alive:
+		var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		velocity = input_dir * speed
 
 func _physics_process(delta):
 	#no idea how this works, theft is good
@@ -35,6 +45,14 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	if hp <= 0:
+		print("Game Over!")
+		gameover.emit()
+		alive = false
+		$CollisionShape2D2.disabled = true
+		hide()
+		
+	
 	if cooldown > 0:
 		cooldown -= 1;
 	
@@ -42,11 +60,11 @@ func _process(delta: float) -> void:
 	rotate(get_angle_to(get_global_mouse_position()))
 	
 	# Check for shoot
-	if Input.is_action_pressed("shoot") && cooldown <= 0:
+	if Input.is_action_pressed("shoot") && cooldown <= 0 && alive:
 		
 		#play sfx
-		$AudioStreamPlayer2D.play()
+		$AudioStreamPlayer2D2.play()
 		#set cooldown
-		cooldown = 15
+		cooldown = 8
 		#load bullet
 		shoot()

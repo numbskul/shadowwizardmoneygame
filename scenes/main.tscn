@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://uw4pads0g1we"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ntir0"]
+[ext_resource type="PackedScene" uid="uid://dtvorr3ckoqes" path="res://scenes/testlevel.tscn" id="2_0qwg6"]
+[ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="3_ogrg1"]
+[ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="4_c6wnh"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ntir0")
+
+[node name="Map & Music" parent="." instance=ExtResource("2_0qwg6")]
+scale = Vector2(2, 2)
+
+[node name="HUD" parent="." instance=ExtResource("3_ogrg1")]
+
+[node name="Player" parent="." instance=ExtResource("4_c6wnh")]
+
+[connection signal="gameover" from="Player" to="." method="_on_player_gameover"]
+[connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]
+[connection signal="updateHP" from="Player" to="HUD" method="_on_player_update_hp"]
