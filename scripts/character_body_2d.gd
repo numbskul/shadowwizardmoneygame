@@ -13,13 +13,14 @@ func _ready() -> void:
 func shoot():
 	var instance = projectile.instantiate()
 	#set rot & pos, pos is offset to avoid spawning inside player
-	var rot = get_parent().rotation
+	var rot = rotation
+	var pos = global_position
 	instance.dir = rot
 	instance.spawn_rot = rotation
-	instance.spawn_pos = position + (Vector2.RIGHT.rotated(rotation) * 50)
+	instance.spawn_pos = pos + (Vector2.RIGHT.rotated(rotation) * 50)
 	#create bullet in world
 	get_tree().root.add_child(instance)
-	print("Shoot")
+
 
 func hit():
 	hp -= 5

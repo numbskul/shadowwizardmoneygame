@@ -20,6 +20,7 @@ func _physics_process(delta):
 	if collision:
 		$AudioStreamPlayer2D.play()
 		velocity = velocity.bounce(collision.get_normal())
+		rotation = velocity.angle()
 		if collision.get_collider().has_method("hit"):
 			collision.get_collider().hit()
 			queue_free()

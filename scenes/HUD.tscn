@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj1bn2pka11pe"]
+
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_yh605"]
+[ext_resource type="FontFile" uid="uid://fvgovnnepf62" path="res://Jersey15-Regular.ttf" id="2_y586e"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_yh605")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_y586e")
+theme_override_font_sizes/font_size = 100
+text = "HP: X"
+metadata/_edit_use_anchors_ = true
