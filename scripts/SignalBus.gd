@@ -1,6 +1,7 @@
 extends Node
 
 signal enemy_death(points);
+signal restart();
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():

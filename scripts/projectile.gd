@@ -9,6 +9,7 @@ var spawn_velocity : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalBus.restart.connect(_on_restart)
 	position = spawn_pos
 	rotation = spawn_rot
 	velocity = Vector2.RIGHT.rotated(get_rotation()) * speed
@@ -25,7 +26,8 @@ func _physics_process(delta):
 			collision.get_collider().hit(3)
 			queue_free()
 	
-
+func _on_restart():
+	queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

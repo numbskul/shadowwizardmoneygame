@@ -29,5 +29,6 @@ func _on_player_update_hp(hp):
 
 
 func _on_restart_button_button_down():
+	SignalBus.restart.emit()
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 	pass # Replace with function body.
