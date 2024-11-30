@@ -36,3 +36,8 @@ func _on_close_level_select_down():
 func _on_close_credits_button_down():
 	$Credits.hide()
 	pass # Replace with function body.
+
+
+func _on_quit_button_button_down():
+	get_tree().quit()
+	pass # Replace with function body.

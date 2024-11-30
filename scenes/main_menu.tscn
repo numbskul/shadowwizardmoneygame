@@ -46,6 +46,7 @@ offset_right = 142.5
 offset_bottom = 115.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
 alignment = 1
 
 [node name="LevelSelectButton" type="Button" parent="HBoxContainer"]
@@ -65,6 +66,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_dho5t")
 theme_override_font_sizes/font_size = 32
 text = "CREDITS"
+
+[node name="QuitButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dho5t")
+theme_override_font_sizes/font_size = 32
+text = "  QUIT  "
 
 [node name="Credits" type="ColorRect" parent="."]
 visible = false
@@ -107,11 +114,11 @@ theme_override_fonts/font = ExtResource("2_dho5t")
 theme_override_font_sizes/font_size = 64
 text = "Siwen - Art & Code
 Matt - Code
-Andrew - Code
+Andrew - Music & SFX
 & Thank You to all Counterspell Organizers
 for giving us and others the opportunity 
 to make games together!
-(especially San Diego yall rock)"
+(especially San Diego yall rock :D )"
 label_settings = SubResource("LabelSettings_y1ari")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -163,5 +170,6 @@ vertical_alignment = 1
 [connection signal="button_down" from="HBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_button_down"]
 [connection signal="button_down" from="HBoxContainer/PlayButton" to="." method="_on_play_button_button_down"]
 [connection signal="button_down" from="HBoxContainer/CreditsButton" to="." method="_on_credits_button_button_down"]
+[connection signal="button_down" from="HBoxContainer/QuitButton" to="." method="_on_quit_button_button_down"]
 [connection signal="button_down" from="Credits/Button" to="." method="_on_close_credits_button_down"]
 [connection signal="button_down" from="LevelSelect/Button" to="." method="_on_close_level_select_down"]

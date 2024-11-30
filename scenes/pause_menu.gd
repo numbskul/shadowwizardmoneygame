@@ -22,6 +22,7 @@ func pause_toggle():
 		hide()
 		
 func _on_quit_button_down():
+	get_tree().quit()
 	pass # Replace with function body.
 
 
