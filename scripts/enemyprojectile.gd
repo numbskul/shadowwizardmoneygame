@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 1000
+@export var speed = 650
 
 var bounces = 3
 var dir : float

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var cooldown = 0;
-var movement_speed = 300
+var movement_speed = 250
 var movement_target_position = null
 var hp = 12;
 var alive = true
