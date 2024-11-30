@@ -79,7 +79,7 @@ offset_right = 295.0
 offset_bottom = 166.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.75)
+color = Color(0, 0, 0, 0.9)
 
 [node name="Button" type="Button" parent="Credits"]
 layout_mode = 0
@@ -109,7 +109,8 @@ Matt - Code
 Andrew - Code
 & Thank You to all Counterspell Organizers
 for giving us and others the opportunity 
-to make games together!"
+to make games together!
+(especially San Diego yall rock)"
 label_settings = SubResource("LabelSettings_y1ari")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -128,7 +129,7 @@ offset_right = 295.0
 offset_bottom = 166.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.75)
+color = Color(0, 0, 0, 0.9)
 
 [node name="Button" type="Button" parent="LevelSelect"]
 layout_mode = 0
