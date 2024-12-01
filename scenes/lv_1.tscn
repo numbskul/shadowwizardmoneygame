@@ -74,7 +74,7 @@ navigation_polygon = SubResource("NavigationPolygon_qhwwc")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("6_g05n2")
-volume_db = -15.0
+volume_db = -20.0
 autoplay = true
 script = ExtResource("7_cvynk")
 

@@ -9,6 +9,7 @@ signal gameover;
 signal updateHP;
 
 @onready var projectile = preload("res://scenes/projectile.tscn")
+@onready var _original_color = $Body2.modulate
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +33,11 @@ func hit(damage):
 		if hp < 0:
 			hp = 0
 		updateHP.emit(hp)
+		$Body2.modulate = Color.from_hsv(_original_color.h, 1, _original_color.v)
+		$Arms2.modulate = Color.from_hsv(_original_color.h, 1, _original_color.v)
+		await get_tree().create_timer(0.1).timeout
+		$Body2.modulate = Color.from_hsv(_original_color.h , 0, _original_color.v)
+		$Arms2.modulate = Color.from_hsv(_original_color.h, 0, _original_color.v)
 		# Flash red / screenshake / some sort of hit indicator
 	
 func get_input():

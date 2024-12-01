@@ -7,6 +7,8 @@ var alive = true
 var target = null
 signal kill;
 @onready var projectile = preload("res://scenes/enemy_projectile.tscn")
+@onready var _original_color = $Sprite2D.modulate
+
 
 func shoot():
 	var instance = projectile.instantiate()
@@ -23,6 +25,9 @@ func hit(damage):
 	hp -= randi_range(damage - 2, damage + 2)
 	if hp < 0:
 		hp = 0
+	$Sprite2D.modulate = Color.from_hsv(_original_color.h, 1, _original_color.v)
+	await get_tree().create_timer(0.1).timeout
+	$Sprite2D.modulate = Color.from_hsv(_original_color.h , 0, _original_color.v)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
