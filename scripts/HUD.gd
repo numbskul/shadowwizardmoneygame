@@ -1,14 +1,19 @@
 extends CanvasLayer
+
+signal levelwon
 var totalscore = 0
 var is_paused = false
 var gamestarted = false
+var playerdead = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalBus.enemy_death.connect(_on_enemy_death)
 	$PauseMenu.hide()
+	$WinMenu.hide()
 	$Score.text = "Score: " + str(totalscore)
 	$DeathMsg.hide()
+	$StartScreen.show()
 	start_countdown()
 	pass # Replace with function body.
 
@@ -20,6 +25,13 @@ func start_countdown():
 func _process(delta):
 	if !gamestarted:
 		$StartScreen/VBoxContainer/Countdown.text = str(ceil($StartScreen/StartTimer.time_left))
+	if  get_tree().get_nodes_in_group("enemies").is_empty() && !playerdead:
+		display_win_screen()
+	pass
+
+func display_win_screen():
+	$WinMenu.show()
+	levelwon	.emit()
 	pass
 
 func _on_enemy_death(score):
@@ -29,6 +41,7 @@ func _on_enemy_death(score):
 
 func _on_player_gameover():
 	$DeathMsg.show()
+	playerdead = true
 	pass # Replace with function body.
 
 
@@ -39,7 +52,7 @@ func _on_player_update_hp(hp):
 
 func _on_restart_button_button_down():
 	SignalBus.restart.emit()
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().reload_current_scene()
 	pass # Replace with function body.
 	
 

@@ -4,6 +4,7 @@ var speed = 700;
 var cooldown = 0;
 var hp = 100;
 var alive = true
+var levelwon = false
 signal gameover;
 signal updateHP;
 
@@ -26,14 +27,15 @@ func shoot():
 
 
 func hit(damage):
-	hp -= randi_range(damage - 2, damage + 2)
-	if hp < 0:
-		hp = 0
-	updateHP.emit(hp)
-	# Flash red / screenshake / some sort of hit indicator
+	if !levelwon:
+		hp -= randi_range(damage - 2, damage + 2)
+		if hp < 0:
+			hp = 0
+		updateHP.emit(hp)
+		# Flash red / screenshake / some sort of hit indicator
 	
 func get_input():
-	if alive:
+	if alive && !levelwon:
 		var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		velocity = input_dir * speed
 
@@ -44,6 +46,9 @@ func _physics_process(delta):
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if levelwon:
+		velocity = Vector2.ZERO
 	
 	if hp <= 0:
 		gameover.emit()
@@ -60,7 +65,7 @@ func _process(delta: float) -> void:
 	rotate(get_angle_to(get_global_mouse_position()))
 	
 	# Check for shoot
-	if Input.is_action_pressed("shoot") && cooldown <= 0 && alive:
+	if Input.is_action_pressed("shoot") && cooldown <= 0 && alive && !levelwon:
 		
 		#play sfx
 		$AudioStreamPlayer2D2.play()
@@ -68,3 +73,8 @@ func _process(delta: float) -> void:
 		cooldown = 8
 		#load bullet
 		shoot()
+
+
+func _on_levelwon():
+	levelwon = true
+	pass # Replace with function body.

@@ -36,11 +36,7 @@ func hit(damage):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# These values need to be adjusted for the actor's speed
-	# and the navigation layout.
-	#$NavigationAgent2D.path_desired_distance = 4.0
-	#$NavigationAgent2D.target_desired_distance = 4.0
-
+	add_to_group("enemies")
 	# Make sure to not await during _ready.
 	actor_setup.call_deferred()
 	pass # Replace with function body.

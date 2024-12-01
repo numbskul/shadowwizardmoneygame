@@ -20,60 +20,33 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_n6n00"]
-vertices = PackedVector2Array(9.96094, 376, -372.094, 376, -374.898, 78, -119.148, 78, 118.102, 202.992, 1333, 910.961, 1333, 1079, -52.1094, 1079, -53.8906, 911.961, 520.977, 909.969, 822.922, 908.961, 824.078, 760.023, 522.023, 377.969, 759.078, 527.023, 118.961, 633.07, 10.9609, 633.922, 117.961, 379.031, 1780.08, -116, 1781.92, 119.047, 1205.96, 122.047, 1034.97, -116, 1033.97, 204.008, 1206.96, 377.039, 757.922, 379.039, 1353.89, 334.969, 1718, 334.023, 1718, 758.023, 1351.9, 525.977, 116.102, 9.10938, -118.141, 11.8828)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9, 10), PackedInt32Array(11, 10, 9, 12, 13), PackedInt32Array(14, 15, 0, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 20, 19, 22), PackedInt32Array(4, 21, 22, 23, 12), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(27, 26, 11, 13), PackedInt32Array(23, 13, 12), PackedInt32Array(4, 12, 16, 0), PackedInt32Array(28, 4, 3, 29)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(126, -1, 128, 193, 1024, 194, 1025, -126, 1790, -126, 1792, 129, 1216, 132, 1217, 387, 768, 389, 769, 517, 1342, 516, 1344, 325, 1728, 324, 1728, 768, 834, 770, 833, 899, 1343, 901, 1343, 1089, -62, 1089, -64, 902, 511, 900, 512, 388, 128, 389, 129, 643, 1, 644, 0, 386, -382, 386, -385, 68, -129, 68, -128, 2)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qhwwc"]
+vertices = PackedVector2Array(117.117, 377, 114.109, 627.539, 9, 633.422, 9, 377, 116.047, 205.008, -117.852, 75.9219, -118.844, 9.20313, 115.047, 13.7969, 1780.15, -116.031, 1783.84, 118.047, 1206.08, 121.047, 1034.06, -118.961, 1036.06, 203.992, 1204.08, 379, 760.313, 379, 526.063, 377, 1333.89, 908.938, 1332.1, 1078.97, -50.1016, 1076.02, -51.8906, 909.938, 522.938, 906.953, 821.078, 905.938, 819.922, 760.031, 755.672, 524, 1355, 524, 1355, 333.023, 1717.04, 333.969, 1718.95, 757.031, -373, 377, -373, 77.9219)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 4, 3), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 11, 10, 13), PackedInt32Array(4, 12, 13, 14, 15), PackedInt32Array(16, 17, 18, 19, 20, 21), PackedInt32Array(22, 21, 20, 15, 23), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(24, 27, 22, 23), PackedInt32Array(14, 23, 15), PackedInt32Array(4, 15, 0), PackedInt32Array(5, 3, 28, 29)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(125, 4, 126, 195, 1026, 194, 1024, -129, 1790, -126, 1794, 128, 1216, 131, 1214, 389, 770, 389, 766, 514, 1345, 514, 1345, 323, 1727, 324, 1729, 767, 830, 770, 831, 896, 1344, 899, 1342, 1089, -60, 1086, -62, 900, 513, 897, 516, 387, 127, 387, 124, 637, -1, 644, -1, 387, -383, 387, -383, 68, -128, 66, -129, -1)])
 
 [node name="Level" type="Node"]
 script = SubResource("GDScript_rg83i")
 
 [node name="Map & Music" parent="." instance=ExtResource("2_0qwg6")]
-scale = Vector2(2, 2)
 
 [node name="HUD" parent="." instance=ExtResource("3_ogrg1")]
 
 [node name="Player" parent="." instance=ExtResource("4_c6wnh")]
-
-[node name="StationaryEnemy" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
-position = Vector2(1724, 1085)
-
-[node name="StationaryEnemy2" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
-position = Vector2(2107, 201)
-
-[node name="StationaryEnemy6" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
-position = Vector2(2327, 191)
-
-[node name="StationaryEnemy3" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
-position = Vector2(3263, 982)
-
-[node name="StationaryEnemy7" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
-position = Vector2(3047, 848)
+position = Vector2(57, 568)
+rotation = -1.48944
 
 [node name="StationaryEnemy4" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
-position = Vector2(1731, 1482)
+position = Vector2(238, 997)
 
 [node name="StationaryEnemy5" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
-position = Vector2(1579, 453)
-
-[node name="MovingEnemy" parent="." instance=ExtResource("5_g7cya")]
-position = Vector2(583, 1986)
+position = Vector2(582, 269)
 
 [node name="MovingEnemy3" parent="." instance=ExtResource("5_g7cya")]
-position = Vector2(2625, 195)
-
-[node name="MovingEnemy2" parent="." instance=ExtResource("5_g7cya")]
-position = Vector2(1996, 1978)
-
-[node name="MovingEnemy4" parent="." instance=ExtResource("5_g7cya")]
-position = Vector2(2739, 965)
+position = Vector2(1628, 11)
 
 [node name="MovingEnemy5" parent="." instance=ExtResource("5_g7cya")]
-position = Vector2(2861, 689)
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-scale = Vector2(2, 2)
-navigation_polygon = SubResource("NavigationPolygon_n6n00")
+position = Vector2(1413, 388)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -500
@@ -90,6 +63,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.219254, 0.12474, 0.0463132, 1)
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_qhwwc")
+
+[connection signal="levelwon" from="HUD" to="Player" method="_on_levelwon"]
 [connection signal="gameover" from="Player" to="." method="_on_player_gameover"]
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]
 [connection signal="updateHP" from="Player" to="HUD" method="_on_player_update_hp"]
