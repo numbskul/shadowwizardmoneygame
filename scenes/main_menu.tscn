@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://fc7kfjo6dnsk"]
+[gd_scene load_steps=7 format=3 uid="uid://fc7kfjo6dnsk"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2ltwo"]
 [ext_resource type="Texture2D" uid="uid://dgpoeyvcnmbya" path="res://art/title_screen_placeholder.png" id="1_ngclg"]
 [ext_resource type="FontFile" uid="uid://y4vu0qq5k4k4" path="res://Jersey15-Regular.ttf" id="2_dho5t"]
+[ext_resource type="Script" path="res://scenes/level_select.gd" id="4_i38ty"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y1ari"]
 font_size = 32
+
+[sub_resource type="Theme" id="Theme_4qsun"]
+default_font = ExtResource("2_dho5t")
+default_font_size = 32
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -87,7 +92,7 @@ offset_right = 295.0
 offset_bottom = 166.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.9)
+color = Color(0.130772, 0.130772, 0.130772, 0.9)
 
 [node name="Button" type="Button" parent="Credits"]
 layout_mode = 0
@@ -137,7 +142,8 @@ offset_right = 295.0
 offset_bottom = 166.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.9)
+color = Color(0.147672, 0.147672, 0.147672, 0.9)
+script = ExtResource("4_i38ty")
 
 [node name="Button" type="Button" parent="LevelSelect"]
 layout_mode = 0
@@ -147,25 +153,92 @@ theme_override_fonts/font = ExtResource("2_dho5t")
 theme_override_font_sizes/font_size = 16
 text = "Close"
 
-[node name="Label" type="Label" parent="LevelSelect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -353.5
-offset_top = -124.5
-offset_right = 357.5
-offset_bottom = 124.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_dho5t")
-theme_override_font_sizes/font_size = 64
-text = "Currently WIP"
-label_settings = SubResource("LabelSettings_y1ari")
-horizontal_alignment = 1
-vertical_alignment = 1
+theme = SubResource("Theme_4qsun")
+theme_override_constants/separation = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="LV1" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 1"
+
+[node name="LV2" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Level 2"
+
+[node name="LV3" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "WIP"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="LV4" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "WIP"
+
+[node name="LV5" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "WIP"
+
+[node name="LV6" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "WIP"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="LevelSelect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="LV7" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "WIP"
+
+[node name="LV8" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "WIP"
+
+[node name="LV9" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "WIP"
 
 [connection signal="button_down" from="HBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_button_down"]
 [connection signal="button_down" from="HBoxContainer/PlayButton" to="." method="_on_play_button_button_down"]
@@ -173,3 +246,5 @@ vertical_alignment = 1
 [connection signal="button_down" from="HBoxContainer/QuitButton" to="." method="_on_quit_button_button_down"]
 [connection signal="button_down" from="Credits/Button" to="." method="_on_close_credits_button_down"]
 [connection signal="button_down" from="LevelSelect/Button" to="." method="_on_close_level_select_down"]
+[connection signal="button_down" from="LevelSelect/VBoxContainer/HBoxContainer/LV1" to="LevelSelect" method="_on_lv_1_button_down"]
+[connection signal="button_down" from="LevelSelect/VBoxContainer/HBoxContainer/LV2" to="LevelSelect" method="_on_lv_2_button_down"]
