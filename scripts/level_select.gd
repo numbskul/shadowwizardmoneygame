@@ -19,3 +19,8 @@ func _on_lv_1_button_down():
 func _on_lv_2_button_down():
 	get_tree().change_scene_to_file("res://scenes/lv_2.tscn")
 	pass # Replace with function body.
+
+
+func _on_lv_4_button_down():
+	get_tree().change_scene_to_file("res://scenes/lv_4.tscn")
+	pass # Replace with function body.

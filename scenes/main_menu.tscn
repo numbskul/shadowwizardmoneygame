@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2ltwo"]
 [ext_resource type="Texture2D" uid="uid://dgpoeyvcnmbya" path="res://art/title_screen_placeholder.png" id="1_ngclg"]
 [ext_resource type="FontFile" uid="uid://y4vu0qq5k4k4" path="res://Jersey15-Regular.ttf" id="2_dho5t"]
-[ext_resource type="Script" path="res://scenes/level_select.gd" id="4_i38ty"]
+[ext_resource type="Script" path="res://scripts/level_select.gd" id="4_i38ty"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y1ari"]
 font_size = 32
@@ -203,7 +203,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "WIP"
+text = "Level 4"
 
 [node name="LV5" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -248,3 +248,4 @@ text = "WIP"
 [connection signal="button_down" from="LevelSelect/Button" to="." method="_on_close_level_select_down"]
 [connection signal="button_down" from="LevelSelect/VBoxContainer/HBoxContainer/LV1" to="LevelSelect" method="_on_lv_1_button_down"]
 [connection signal="button_down" from="LevelSelect/VBoxContainer/HBoxContainer/LV2" to="LevelSelect" method="_on_lv_2_button_down"]
+[connection signal="button_down" from="LevelSelect/VBoxContainer/HBoxContainer2/LV4" to="LevelSelect" method="_on_lv_4_button_down"]
