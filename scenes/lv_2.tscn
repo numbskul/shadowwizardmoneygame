@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dpp5pxwplto1c"]
+[gd_scene load_steps=13 format=4 uid="uid://dpp5pxwplto1c"]
 
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="1_tml5s"]
 [ext_resource type="Script" path="res://scenes/lv_2.gd" id="1_u0gv7"]
@@ -8,11 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="5_y83ub"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="6_7bc1e"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="7_u03kg"]
+[ext_resource type="PackedScene" uid="uid://c53004b6fpkwx" path="res://scenes/torch.tscn" id="9_ns5xa"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fr2ff"]
 vertices = PackedVector2Array(3124.88, 373.938, 3127.88, 631.898, 2828.88, 629.094, 2825.88, 376.938, 2487, 379.063, 2487, 633.867, 2192.81, 630.117, 2187.81, 371.938, 2828.96, -249.094, 2829.95, -501.828, 3126.03, -497.148, 3127.04, -243.906, 1844.07, 630.031, 1549.08, 630.961, 1551.08, 379.094, 1846.08, 374.063, -690.047, 1526.02, -692.938, 968.008, 910.031, 971.023, 1206, 1529.97, 1206, 375.906, 907.969, 377, 911, -243, -71, 381.063, -71, 632.93, -370.07, 631.063, -372.078, 377.969, 1547.92, -248.031, 1549.92, -502.148, 1845.11, -506.844, 1848.11, -246, 911, -1392, 2806.98, -1392.99, 2806.01, -717.969, 1208.98, -713.969, 1210.02, -246.969, 3468.98, -247.094, 3469.97, -693.008, 4982.99, -694.977, 4982, 823.008, 3471.95, 824.977, 3469.96, 376.063, -710.922, 631, -1011, 631, -1011, 380.031, -708.922, 379.031, 2190.12, -246, 2187.11, -499.117, 2482.35, -502.867, 2491.35, -245.906, -369.039, -254.313, -368.039, -496, -72.7734, -496, -66.7578, -243.906, -1712.01, 378.023, -1712.98, -240.109, -1012.08, -248.109, -707.883, -243.688, 272.773, -247.094, 278.758, -501.828, 569, -497.148, 569, -243, 264.773, 378.938, -1010.07, -498.031, -710.883, -498.961, 571.227, 377, 565.219, 630.094, 270.758, 632.898)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(20, 19, 18, 21, 22), PackedInt32Array(23, 24, 25, 26), PackedInt32Array(27, 28, 29, 30, 15, 14), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(22, 31, 34, 35, 20), PackedInt32Array(36, 37, 38, 39, 40, 41), PackedInt32Array(11, 36, 41, 0), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(50, 51, 52, 53), PackedInt32Array(45, 44, 54, 55, 56, 57), PackedInt32Array(58, 59, 60, 61, 62), PackedInt32Array(63, 64, 57, 56), PackedInt32Array(26, 45, 57, 50, 53), PackedInt32Array(62, 23, 26, 53, 58), PackedInt32Array(49, 8, 11, 0, 3, 4, 7), PackedInt32Array(30, 46, 49, 7, 15), PackedInt32Array(27, 14, 20, 35), PackedInt32Array(61, 22, 21, 65), PackedInt32Array(62, 61, 65, 66, 67)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1021, 390, -1021, 641, -701, 641, -699, 389, -382, 388, -380, 641, -61, 643, -61, 391, 255, 389, 261, 643, 575, 640, 581, 387, 898, 387, 900, 961, -703, 958, -700, 1536, 1216, 1540, 1216, 386, 1541, 389, 1539, 641, 1854, 640, 1856, 384, 2178, 382, 2183, 640, 2497, 644, 2497, 389, 2816, 387, 2819, 639, 3138, 642, 3135, 384, 3460, 386, 3462, 835, 4992, 833, 4993, -705, 3460, -703, 3459, -257, 3137, -254, 3136, -507, 2820, -512, 2819, -259, 2501, -256, 2492, -513, 2177, -509, 2180, -256, 1858, -256, 1855, -517, 1540, -512, 1538, -258, 1220, -257, 1219, -704, 2816, -708, 2817, -1403, 901, -1402, 901, -253, 579, -253, 579, -507, 269, -512, 263, -257, -57, -254, -63, -506, -378, -506, -379, -264, -698, -254, -701, -509, -1020, -508, -1022, -258, -1723, -250, -1722, 388)])
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rho72"]
+polygon = PackedVector2Array(-1748, -274, -1749, 408, -1046, 407, -1045, 663, -672, 664, -675, 410, -407, 411, -404, 665, -33, 667, -36, 410, 235, 413, 237, 667, 609, 661, 606, 418, 872, 415, 875, 938, -724, 941, -727, 1561, 1244, 1560, 1243, 406, 1513, 408, 1518, 664, 1885, 664, 1881, 411, 2154, 410, 2153, 660, 2525, 664, 2525, 411, 2793, 410, 2797, 659, 3161, 663, 3162, 410, 3433, 408, 3436, 857, 5023, 855, 5019, -721, 3437, -721, 3435, -279, 3165, -276, 3163, -532, 2797, -532, 2796, -281, 2520, -276, 2523, -531, 2156, -533, 2155, -280, 1887, -275, 1883, -534, 1517, -530, 1513, -279, 1244, -275, 1242, -808, 2846, -811, 2845, -1554, 880, -1549, 876, -279, 606, -272, 602, -532, 239, -527, 234, -272, -37, -277, -37, -531, -403, -532, -403, -273, -674, -278, -676, -531, -1042, -531, -1041, -285)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b4n5b"]
+polygon = PackedVector2Array(4256, -226, 4517, -226, 4519, 38, 4254, 43)
 
 [node name="Lv2" type="Node"]
 script = ExtResource("1_u0gv7")
@@ -143,6 +150,140 @@ color = Color(0.219254, 0.12474, 0.0463132, 1)
 position = Vector2(57, 568)
 rotation = -1.48944
 color = Color(0.401968, 0.401968, 0.401968, 1)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, -1)
+occluder = SubResource("OccluderPolygon2D_rho72")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(0, -1)
+occluder = SubResource("OccluderPolygon2D_b4n5b")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+position = Vector2(3, 318)
+occluder = SubResource("OccluderPolygon2D_b4n5b")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+position = Vector2(-318, 317)
+occluder = SubResource("OccluderPolygon2D_b4n5b")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
+position = Vector2(-321, -5)
+occluder = SubResource("OccluderPolygon2D_b4n5b")
+
+[node name="Torch" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(-543, -224)
+
+[node name="Torch2" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(-535, 367)
+
+[node name="Torch3" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(101, 382)
+
+[node name="Torch4" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(90, -219)
+
+[node name="Torch5" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(740, -229)
+
+[node name="Torch6" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(732, 373)
+
+[node name="Torch7" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(909, 743)
+
+[node name="Torch8" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(1224, 735)
+
+[node name="Torch9" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(788, 993)
+
+[node name="Torch10" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(805, 1468)
+
+[node name="Torch11" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(296, 1466)
+
+[node name="Torch12" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(273, 1015)
+
+[node name="Torch13" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(-223, 1023)
+
+[node name="Torch14" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(-193, 1493)
+
+[node name="Torch15" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(1370, 345)
+
+[node name="Torch16" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(2021, 351)
+
+[node name="Torch17" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(2655, 351)
+
+[node name="Torch18" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(3298, 356)
+
+[node name="Torch19" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(3896, 394)
+
+[node name="Torch20" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(4535, 394)
+
+[node name="Torch21" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(4550, -258)
+
+[node name="Torch22" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(3886, -267)
+
+[node name="Torch23" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(3315, -222)
+
+[node name="Torch24" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(2663, -205)
+
+[node name="Torch25" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(2021, -192)
+
+[node name="Torch26" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(1370, -205)
+
+[node name="Torch27" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(909, -639)
+
+[node name="Torch28" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(1192, -641)
+
+[node name="Torch29" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(1528, -905)
+
+[node name="Torch30" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(2021, -905)
+
+[node name="Torch31" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(2504, -873)
+
+[node name="Torch32" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(2504, -1451)
+
+[node name="Torch33" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(2021, -1451)
+
+[node name="Torch34" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(1528, -1440)
+
+[node name="Torch35" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(941, -1451)
+
+[node name="Torch36" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(1165, 1447)
+
+[node name="Torch37" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(-855, 592)
+
+[node name="Torch38" parent="." instance=ExtResource("9_ns5xa")]
+position = Vector2(-863, -434)
 
 [connection signal="gameover" from="player" to="HUD" method="_on_player_gameover"]
 [connection signal="updateHP" from="player" to="HUD" method="_on_player_update_hp"]

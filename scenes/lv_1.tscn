@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwinigqjfcktr"]
+[gd_scene load_steps=11 format=3 uid="uid://dwinigqjfcktr"]
 
 [ext_resource type="PackedScene" uid="uid://dtvorr3ckoqes" path="res://scenes/testlevel.tscn" id="1_hodpf"]
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="2_kk6yg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="5_13l74"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="6_g05n2"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="7_cvynk"]
+[ext_resource type="PackedScene" uid="uid://c53004b6fpkwx" path="res://scenes/torch.tscn" id="8_tf2qa"]
 
 [sub_resource type="GDScript" id="GDScript_rg83i"]
 script/source = "extends Node
@@ -82,6 +83,34 @@ script = ExtResource("7_cvynk")
 position = Vector2(57, 568)
 rotation = -1.48944
 color = Color(0.401968, 0.401968, 0.401968, 1)
+
+[node name="Torch" parent="." instance=ExtResource("8_tf2qa")]
+position = Vector2(-273, 152)
+rotation = -0.00362194
+
+[node name="Torch2" parent="." instance=ExtResource("8_tf2qa")]
+position = Vector2(488, 410)
+rotation = -0.00362194
+
+[node name="Torch3" parent="." instance=ExtResource("8_tf2qa")]
+position = Vector2(1212, 380)
+rotation = -0.00362194
+
+[node name="Torch4" parent="." instance=ExtResource("8_tf2qa")]
+position = Vector2(1014, 187)
+rotation = -0.00362194
+
+[node name="Torch5" parent="." instance=ExtResource("8_tf2qa")]
+position = Vector2(1433, -112)
+rotation = -0.00362194
+
+[node name="Torch6" parent="." instance=ExtResource("8_tf2qa")]
+position = Vector2(1719, 750)
+rotation = -0.00362194
+
+[node name="Torch7" parent="." instance=ExtResource("8_tf2qa")]
+position = Vector2(821, 913)
+rotation = -0.00362194
 
 [connection signal="levelwon" from="HUD" to="Player" method="_on_levelwon"]
 [connection signal="gameover" from="Player" to="." method="_on_player_gameover"]
