@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://db0m7r5lw41x1"]
+[gd_scene load_steps=16 format=3 uid="uid://db0m7r5lw41x1"]
 
 [ext_resource type="Script" path="res://scripts/enemyprojectile.gd" id="1_lbc4j"]
 [ext_resource type="Texture2D" uid="uid://br371doudlaey" path="res://art/Enemy_Bullet_sheet.png" id="1_sp1cc"]
 [ext_resource type="Texture2D" uid="uid://754o827gxapj" path="res://art/Fun_Enemy_Particle.png" id="2_42mws"]
+[ext_resource type="Texture2D" uid="uid://cg0jyo6xokxah" path="res://neutral_point_light.webp" id="4_h8te1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bmmr0"]
 radius = 3.16228
@@ -107,3 +108,8 @@ frame_progress = 0.392291
 amount = 80
 process_material = SubResource("ParticleProcessMaterial_pp1lt")
 texture = ExtResource("2_42mws")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(2, 2)
+color = Color(0.911256, 0.317774, 0.249822, 1)
+texture = ExtResource("4_h8te1")

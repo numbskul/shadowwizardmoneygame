@@ -139,6 +139,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.219254, 0.12474, 0.0463132, 1)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(57, 568)
+rotation = -1.48944
+color = Color(0.401968, 0.401968, 0.401968, 1)
+
 [connection signal="gameover" from="player" to="HUD" method="_on_player_gameover"]
 [connection signal="updateHP" from="player" to="HUD" method="_on_player_update_hp"]
 [connection signal="levelwon" from="HUD" to="player" method="_on_levelwon"]

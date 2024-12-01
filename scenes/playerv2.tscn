@@ -1,12 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxxdme4ellchi"]
+[gd_scene load_steps=9 format=3 uid="uid://cxxdme4ellchi"]
 
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_ugcky"]
 [ext_resource type="Texture2D" uid="uid://bccx0mqetk5ox" path="res://art/wizard.PNG" id="2_ywa64"]
 [ext_resource type="Texture2D" uid="uid://cwgfnnrdlxcq8" path="res://art/arms.PNG" id="3_k11pr"]
 [ext_resource type="AudioStream" uid="uid://df547pe0yjq3t" path="res://sounds/magic_shoot_sfx_2.wav" id="4_a18eg"]
+[ext_resource type="Texture2D" uid="uid://cg0jyo6xokxah" path="res://neutral_point_light.webp" id="5_s834m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4dims"]
 radius = 36.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o2d55"]
+polygon = PackedVector2Array(-6.5, -54, -6.5, -51.5, -11.5, -41.5, -11.5, -39.2, -19, -35, -21.5, -35, -35.5, -15, -37.5, -15, -37.5, 13.7, -34.5, 17.6, -34.5, 19.8, -22.5, 32.8, -22.5, 34.2, -11, 40, -5.9, 54, 3.8, 54, 9.5, 40.4, 9.5, 39.2, 16, 36, 18.3, 36, 27.3, 27, 28.8, 27, 35.8, 11, 37.5, 11, 37.5, -9.4, 34.5, -16.4, 34.5, -18.8, 24.5, -29.8, 24.5, -31.1, 10.1, -40, 8.9, -40, 4.5, -51.5, 4.5, -54)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3make"]
+polygon = PackedVector2Array(10, -48.4, 10, -30.6, 25.7, -25, 27.4, -25, 51.4, -8, 53.5, -8, 54.4, -4, 54, 5.9, 54, 7.3, 50.6, 8, 48.1, 8, 41, 16.3, 14.5, 30, 10, 30, 10, 48, 24.3, 42, 28.9, 42, 35, 34.7, 55.4, 25, 58, 25, 73, 5, 75.4, 5, 74, -3.3, 74, -6.8, 59, -22.9, 59, -24.5, 50.3, -27, 47.7, -27, 30, -40.1, 30, -42.6, 23.9, -41)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 rotation = 1.5708
@@ -38,5 +45,14 @@ stream = ExtResource("4_a18eg")
 volume_db = -10.0
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_o2d55")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_3make")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("5_s834m")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

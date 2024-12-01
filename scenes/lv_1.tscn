@@ -78,6 +78,11 @@ volume_db = -20.0
 autoplay = true
 script = ExtResource("7_cvynk")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(57, 568)
+rotation = -1.48944
+color = Color(0.401968, 0.401968, 0.401968, 1)
+
 [connection signal="levelwon" from="HUD" to="Player" method="_on_levelwon"]
 [connection signal="gameover" from="Player" to="." method="_on_player_gameover"]
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]

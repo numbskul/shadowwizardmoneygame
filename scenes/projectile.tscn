@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://1oraglk6pq82"]
+[gd_scene load_steps=17 format=3 uid="uid://1oraglk6pq82"]
 
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="1_ucvcs"]
 [ext_resource type="Texture2D" uid="uid://dkmdyo612v7ly" path="res://art/Bullet_sheet.png" id="2_5vvkj"]
 [ext_resource type="Texture2D" uid="uid://cumd8jx7fldli" path="res://art/Fun_Particle.png" id="3_f1sa7"]
 [ext_resource type="AudioStream" uid="uid://b3uiub3xx5v16" path="res://sounds/magic_shoot_bounce_sfx (2).wav" id="4_sd5nt"]
+[ext_resource type="Texture2D" uid="uid://cg0jyo6xokxah" path="res://neutral_point_light.webp" id="5_fx7fw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_henpq"]
 atlas = ExtResource("2_5vvkj")
@@ -116,3 +117,9 @@ volume_db = -20.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_enjdd")
 debug_color = Color(0.981433, 0, 0.371099, 0.42)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(2, 2)
+color = Color(0.223529, 0.815686, 1, 1)
+shadow_enabled = true
+texture = ExtResource("5_fx7fw")

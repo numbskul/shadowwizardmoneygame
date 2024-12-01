@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://ijwy5dw1o2fj"]
+[gd_scene load_steps=7 format=3 uid="uid://ijwy5dw1o2fj"]
 
 [ext_resource type="Script" path="res://scripts/stationary_enemy.gd" id="1_3qplh"]
 [ext_resource type="Texture2D" uid="uid://bx238icad4r5x" path="res://art/enemy wizard.png" id="1_jebs1"]
+[ext_resource type="Texture2D" uid="uid://cg0jyo6xokxah" path="res://neutral_point_light.webp" id="3_7wkbg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tos1b"]
 radius = 43.1045
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7codr"]
 radius = 900.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xq7q1"]
+polygon = PackedVector2Array(-32, -54, -32, -51.4, -37, -40.4, -37, -39.1, -47.7, -32, -50.1, -32, -61.1, -15, -63, -15, -63, 13.7, -54, 25.6, -54, 28.1, -36.6, 40, -36, 40.5, -36, 47.8, -32, 51.8, -32, 54, -23.2, 54, -18, 48.8, -18, 47.7, -12.7, 47, -9.4, 47, 7, 36.1, 7, 35.2, 34.5, 22, 38, 22, 47, 10, 49, 10, 49, 5, 50.4, 5, 49, -3.3, 49, -8.8, 39, -19.8, 39, -21.3, 6.4, -36, 4.6, -36, -8, -45.1, -8, -46.8, -17.9, -48, -19, -48, -22, -51.7, -22, -54)
 
 [node name="StationaryEnemy" type="CharacterBody2D"]
 script = ExtResource("1_3qplh")
@@ -31,6 +35,13 @@ debug_color = Color(0.890196, 0.32549, 0, 0.109804)
 target_position = Vector2(850, 0)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(25, 0)
+occluder = SubResource("OccluderPolygon2D_xq7q1")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("3_7wkbg")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
