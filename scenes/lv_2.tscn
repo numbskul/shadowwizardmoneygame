@@ -122,6 +122,9 @@ volume_db = -20.0
 autoplay = true
 script = ExtResource("7_u03kg")
 
+[node name="CharacterBody2D" parent="AudioStreamPlayer" instance=ExtResource("2_awiqj")]
+position = Vector2(-1281, -128)
+
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -500
 anchors_preset = 8

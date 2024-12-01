@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_yh605"]
 [ext_resource type="FontFile" uid="uid://y4vu0qq5k4k4" path="res://Jersey15-Regular.ttf" id="2_y586e"]
-[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="3_vpyvb"]
-[ext_resource type="Script" path="res://scenes/win_menu.gd" id="4_if0cq"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="3_vpyvb"]
+[ext_resource type="Script" path="res://scripts/win_menu.gd" id="4_if0cq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5fd8h"]
 font = ExtResource("2_y586e")
