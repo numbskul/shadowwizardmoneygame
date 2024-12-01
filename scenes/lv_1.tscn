@@ -1,25 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://uw4pads0g1we"]
+[gd_scene load_steps=10 format=3 uid="uid://dwinigqjfcktr"]
 
-[ext_resource type="PackedScene" uid="uid://dtvorr3ckoqes" path="res://scenes/testlevel.tscn" id="2_0qwg6"]
-[ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="3_ogrg1"]
-[ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="4_c6wnh"]
-[ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="4_v6q6y"]
-[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="5_g7cya"]
-[ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="6_hgott"]
-[ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="7_a11b3"]
+[ext_resource type="PackedScene" uid="uid://dtvorr3ckoqes" path="res://scenes/testlevel.tscn" id="1_hodpf"]
+[ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="2_kk6yg"]
+[ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="3_tp1bk"]
+[ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="4_wxlam"]
+[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="5_13l74"]
+[ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="6_g05n2"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="7_cvynk"]
 
 [sub_resource type="GDScript" id="GDScript_rg83i"]
 script/source = "extends Node
 
-signal displaygameover
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalBus.changelevel.connect(_on_changelevel)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _on_changelevel():
+	get_tree().change_scene_to_file(\"res://scenes/lv_2.tscn\")
 "
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qhwwc"]
@@ -30,24 +33,24 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(125, 4, 126, 195, 1026,
 [node name="Level" type="Node"]
 script = SubResource("GDScript_rg83i")
 
-[node name="Map & Music" parent="." instance=ExtResource("2_0qwg6")]
+[node name="Map & Music" parent="." instance=ExtResource("1_hodpf")]
 
-[node name="HUD" parent="." instance=ExtResource("3_ogrg1")]
+[node name="HUD" parent="." instance=ExtResource("2_kk6yg")]
 
-[node name="Player" parent="." instance=ExtResource("4_c6wnh")]
+[node name="Player" parent="." instance=ExtResource("3_tp1bk")]
 position = Vector2(57, 568)
 rotation = -1.48944
 
-[node name="StationaryEnemy4" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
+[node name="StationaryEnemy4" parent="." groups=["enemies"] instance=ExtResource("4_wxlam")]
 position = Vector2(238, 997)
 
-[node name="StationaryEnemy5" parent="." groups=["enemies"] instance=ExtResource("4_v6q6y")]
+[node name="StationaryEnemy5" parent="." groups=["enemies"] instance=ExtResource("4_wxlam")]
 position = Vector2(582, 269)
 
-[node name="MovingEnemy3" parent="." instance=ExtResource("5_g7cya")]
+[node name="MovingEnemy3" parent="." instance=ExtResource("5_13l74")]
 position = Vector2(1628, 11)
 
-[node name="MovingEnemy5" parent="." instance=ExtResource("5_g7cya")]
+[node name="MovingEnemy5" parent="." instance=ExtResource("5_13l74")]
 position = Vector2(1413, 388)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -70,10 +73,10 @@ navigation_polygon = SubResource("NavigationPolygon_qhwwc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("6_hgott")
+stream = ExtResource("6_g05n2")
 volume_db = -15.0
 autoplay = true
-script = ExtResource("7_a11b3")
+script = ExtResource("7_cvynk")
 
 [connection signal="levelwon" from="HUD" to="Player" method="_on_levelwon"]
 [connection signal="gameover" from="Player" to="." method="_on_player_gameover"]

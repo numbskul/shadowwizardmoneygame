@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://dpp5pxwplto1c"]
+[gd_scene load_steps=10 format=4 uid="uid://dpp5pxwplto1c"]
 
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="1_tml5s"]
+[ext_resource type="Script" path="res://scenes/lv_2.gd" id="1_u0gv7"]
 [ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="2_awiqj"]
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="3_muuyb"]
 [ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="4_ympqw"]
@@ -14,6 +15,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1021, 390, -1021, 641, -701, 641, -699, 389, -382, 388, -380, 641, -61, 643, -61, 391, 255, 389, 261, 643, 575, 640, 581, 387, 898, 387, 900, 961, -703, 958, -700, 1536, 1216, 1540, 1216, 386, 1541, 389, 1539, 641, 1854, 640, 1856, 384, 2178, 382, 2183, 640, 2497, 644, 2497, 389, 2816, 387, 2819, 639, 3138, 642, 3135, 384, 3460, 386, 3462, 835, 4992, 833, 4993, -705, 3460, -703, 3459, -257, 3137, -254, 3136, -507, 2820, -512, 2819, -259, 2501, -256, 2492, -513, 2177, -509, 2180, -256, 1858, -256, 1855, -517, 1540, -512, 1538, -258, 1220, -257, 1219, -704, 2816, -708, 2817, -1403, 901, -1402, 901, -253, 579, -253, 579, -507, 269, -512, 263, -257, -57, -254, -63, -506, -378, -506, -379, -264, -698, -254, -701, -509, -1020, -508, -1022, -258, -1723, -250, -1722, 388)])
 
 [node name="Lv2" type="Node"]
+script = ExtResource("1_u0gv7")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(3, 0)
@@ -121,9 +123,6 @@ stream = ExtResource("6_7bc1e")
 volume_db = -20.0
 autoplay = true
 script = ExtResource("7_u03kg")
-
-[node name="CharacterBody2D" parent="AudioStreamPlayer" instance=ExtResource("2_awiqj")]
-position = Vector2(-1281, -128)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -500

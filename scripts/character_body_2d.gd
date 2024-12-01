@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed = 700;
-var cooldown = 0;
+var on_cooldown = false;
 var hp = 100;
 var alive = true
 var levelwon = false
@@ -58,23 +58,26 @@ func _process(delta: float) -> void:
 		hide()
 		
 	
-	if cooldown > 0:
-		cooldown -= 1;
-	
 	# Set rotation to face mouse
 	rotate(get_angle_to(get_global_mouse_position()))
 	
 	# Check for shoot
-	if Input.is_action_pressed("shoot") && cooldown <= 0 && alive && !levelwon:
+	if Input.is_action_pressed("shoot") && !on_cooldown && alive && !levelwon:
 		
 		#play sfx
 		$AudioStreamPlayer2D2.play()
 		#set cooldown
-		cooldown = 8
+		$Timer.start(0.2)
+		on_cooldown = true
 		#load bullet
 		shoot()
 
 
 func _on_levelwon():
 	levelwon = true
+	pass # Replace with function body.
+
+
+func _on_timer_timeout():
+	on_cooldown = false
 	pass # Replace with function body.

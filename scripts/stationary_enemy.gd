@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var cooldown = 0;
+var on_cooldown = false;
 var movement_speed = 300
 var hp = 12;
 var alive = true
@@ -37,14 +37,13 @@ func _process(delta):
 		SignalBus.enemy_death.emit(10)
 		queue_free()
 	
-	if cooldown > 0:
-		cooldown -= 1
 	
 	if target != null:
 		rotate(get_angle_to(target.position))
-		if $RayCast2D.get_collider() == target && cooldown <= 0:
+		if $RayCast2D.get_collider() == target && !on_cooldown:
+			on_cooldown = true
 			shoot()
-			cooldown = 30
+			$Timer.start(0.7)
 		
 	pass
 
@@ -56,4 +55,9 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_body_exited(body):
 	target = null
+	pass # Replace with function body.
+
+
+func _on_timer_timeout():
+	on_cooldown = false
 	pass # Replace with function body.
