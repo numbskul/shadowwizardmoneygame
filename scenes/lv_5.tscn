@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://ddmb156nm8kx7"]
 
 [ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="1_1occ6"]
-[ext_resource type="Script" path="res://scenes/lv_5.gd" id="1_s0red"]
+[ext_resource type="Script" path="res://scripts/lv_5.gd" id="1_rx8t3"]
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="2_wn3hu"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="3_g1cuf"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="4_i7f2e"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c53004b6fpkwx" path="res://scenes/torch.tscn" id="8_gahhb"]
 
 [node name="Node" type="Node"]
-script = ExtResource("1_s0red")
+script = ExtResource("1_rx8t3")
 
 [node name="Player" parent="." instance=ExtResource("1_1occ6")]
 z_index = 1
