@@ -95,7 +95,6 @@ position = Vector2(1510, 622)
 position = Vector2(1942, 301)
 
 [node name="StationaryEnemy4" parent="." instance=ExtResource("7_ffb4e")]
-visible = false
 position = Vector2(2099, 869)
 
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]

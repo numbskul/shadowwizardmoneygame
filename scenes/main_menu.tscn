@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://fc7kfjo6dnsk"]
+[gd_scene load_steps=9 format=3 uid="uid://fc7kfjo6dnsk"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2ltwo"]
 [ext_resource type="Texture2D" uid="uid://dgpoeyvcnmbya" path="res://art/title_screen_placeholder.png" id="1_ngclg"]
 [ext_resource type="FontFile" uid="uid://y4vu0qq5k4k4" path="res://Jersey15-Regular.ttf" id="2_dho5t"]
 [ext_resource type="Script" path="res://scripts/level_select.gd" id="4_i38ty"]
+[ext_resource type="AudioStream" uid="uid://dae1pn6s6pney" path="res://sounds/MagiKill_Main_Screen.wav" id="5_i6f4e"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="6_snvgw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y1ari"]
 font_size = 32
@@ -239,6 +241,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "WIP"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i6f4e")
+volume_db = -20.0
+autoplay = true
+script = ExtResource("6_snvgw")
 
 [connection signal="button_down" from="HBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_button_down"]
 [connection signal="button_down" from="HBoxContainer/PlayButton" to="." method="_on_play_button_button_down"]
