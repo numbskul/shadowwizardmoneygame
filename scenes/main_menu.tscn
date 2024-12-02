@@ -193,7 +193,7 @@ text = "Level 2"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "WIP"
+text = "Level 3"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="LevelSelect/VBoxContainer"]
 layout_mode = 2
@@ -211,13 +211,13 @@ text = "Level 4"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "WIP"
+text = "Level 5"
 
 [node name="LV6" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "WIP"
+text = "Level 6"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="LevelSelect/VBoxContainer"]
 layout_mode = 2
@@ -228,19 +228,19 @@ theme_override_constants/separation = 50
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "WIP"
+text = "Level 7"
 
 [node name="LV8" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "WIP"
+text = "Level 8"
 
 [node name="LV9" type="Button" parent="LevelSelect/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "WIP"
+text = "Level 9"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_i6f4e")
