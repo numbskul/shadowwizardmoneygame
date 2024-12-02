@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="4_hfbe6"]
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="5_vnc1p"]
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="7_k5qji"]
-[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="7_mtd2l"]
+[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://Scenes/moving_enemy.tscn" id="7_mtd2l"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_0pfku")
@@ -124,10 +124,7 @@ position = Vector2(-636, -474)
 [node name="MovingEnemy11" parent="." instance=ExtResource("7_mtd2l")]
 position = Vector2(-394, -864)
 
-[node name="MovingEnemy12" parent="." instance=ExtResource("7_mtd2l")]
-position = Vector2(-394, -864)
-
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
-[connection signal="gameover" from="Player" to="Player" method="_on_gameover"]
-[connection signal="updateHP" from="Player" to="Player" method="_on_update_hp"]
+[connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]
+[connection signal="updateHP" from="Player" to="HUD" method="_on_player_update_hp"]
 [connection signal="levelwon" from="HUD" to="Player" method="_on_hud_levelwon"]
