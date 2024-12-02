@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuxpf38do2oun"]
+
+[ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="1_8m1su"]
+[ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="2_1yver"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="3_pquxo"]
+
+[node name="lv_7" type="Node"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_8m1su")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -500
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3906.0
+offset_top = -2571.0
+offset_right = 3363.0
+offset_bottom = 2505.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219254, 0.12474, 0.0463132, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(57, 568)
+rotation = -1.48944
+color = Color(0.401968, 0.401968, 0.401968, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_1yver")
+volume_db = -20.0
+autoplay = true
+script = ExtResource("3_pquxo")

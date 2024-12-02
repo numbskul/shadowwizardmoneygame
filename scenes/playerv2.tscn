@@ -17,7 +17,7 @@ polygon = PackedVector2Array(10, -48.4, 10, -30.6, 25.7, -25, 27.4, -25, 51.4, -
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 rotation = 1.5708
-collision_layer = 5
+collision_layer = 7
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_ugcky")
