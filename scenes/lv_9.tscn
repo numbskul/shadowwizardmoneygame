@@ -37,6 +37,7 @@ color = Color(0, 0, 0, 1)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(57, 568)
 rotation = -1.48944
+color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_08e6i")]
 z_index = 1
