@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cuxpf38do2oun"]
+[gd_scene load_steps=9 format=4 uid="uid://cuxpf38do2oun"]
 
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="1_8m1su"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="2_1yver"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="4_jrahy"]
 [ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="5_br511"]
 [ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="6_vgfti"]
+[ext_resource type="PackedScene" uid="uid://c53004b6fpkwx" path="res://scenes/torch.tscn" id="8_wglxt"]
 
 [node name="lv_7" type="Node"]
 
@@ -157,6 +158,36 @@ rotation = 3.78313
 [node name="MovingEnemy14" parent="." instance=ExtResource("6_vgfti")]
 position = Vector2(633, -271)
 rotation = 3.70689
+
+[node name="Torch" parent="." instance=ExtResource("8_wglxt")]
+position = Vector2(1412, 1732)
+
+[node name="Torch2" parent="." instance=ExtResource("8_wglxt")]
+position = Vector2(1357, 2486)
+
+[node name="Torch3" parent="." instance=ExtResource("8_wglxt")]
+position = Vector2(868, 2883)
+
+[node name="Torch4" parent="." instance=ExtResource("8_wglxt")]
+position = Vector2(461, 2769)
+
+[node name="Torch5" parent="." instance=ExtResource("8_wglxt")]
+position = Vector2(0, 1998)
+
+[node name="Torch6" parent="." instance=ExtResource("8_wglxt")]
+position = Vector2(-3, 1432)
+
+[node name="Torch7" parent="." instance=ExtResource("8_wglxt")]
+position = Vector2(0, 495)
+
+[node name="Torch8" parent="." instance=ExtResource("8_wglxt")]
+position = Vector2(-3, -149)
+
+[node name="Torch9" parent="." instance=ExtResource("8_wglxt")]
+position = Vector2(-139, -751)
+
+[node name="Torch10" parent="." instance=ExtResource("8_wglxt")]
+position = Vector2(152, -751)
 
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
 [connection signal="levelwon" from="HUD" to="player" method="_on_levelwon"]

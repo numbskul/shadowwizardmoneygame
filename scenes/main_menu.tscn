@@ -244,7 +244,7 @@ text = "Level 9"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_i6f4e")
-volume_db = -20.0
+volume_db = -15.0
 autoplay = true
 script = ExtResource("6_snvgw")
 

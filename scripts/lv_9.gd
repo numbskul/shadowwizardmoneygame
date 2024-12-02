@@ -11,5 +11,4 @@ func _process(delta):
 	pass
 
 func _on_changelevel():
-	get_tree().change_scene_to_file("res://scenes/end.tscn")
-#	End Screen????
+	get_tree().change_scene_to_file("res://scenes/thankyouscreen.tscn")

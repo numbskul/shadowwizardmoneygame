@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://mf2pti4bb48j"]
+[gd_scene load_steps=10 format=4 uid="uid://mf2pti4bb48j"]
 
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="1_tml5s"]
 [ext_resource type="Script" path="res://scripts/lv_2.gd" id="1_u0gv7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="5_y83ub"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="6_7bc1e"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="7_u03kg"]
+[ext_resource type="PackedScene" uid="uid://c53004b6fpkwx" path="res://scenes/torch.tscn" id="9_3yvd2"]
 
 [node name="lv_2" type="Node"]
 script = ExtResource("1_u0gv7")
@@ -61,6 +62,18 @@ position = Vector2(813, -509)
 
 [node name="MovingEnemy" parent="." instance=ExtResource("5_y83ub")]
 position = Vector2(2204, 3)
+
+[node name="Torch" parent="." instance=ExtResource("9_3yvd2")]
+position = Vector2(578, -273)
+
+[node name="Torch2" parent="." instance=ExtResource("9_3yvd2")]
+position = Vector2(1781, -305)
+
+[node name="Torch3" parent="." instance=ExtResource("9_3yvd2")]
+position = Vector2(1781, 312)
+
+[node name="Torch4" parent="." instance=ExtResource("9_3yvd2")]
+position = Vector2(539, 304)
 
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]
