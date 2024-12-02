@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="4_hfbe6"]
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="5_vnc1p"]
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="7_k5qji"]
-[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://Scenes/moving_enemy.tscn" id="7_mtd2l"]
+[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="7_mtd2l"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_0pfku")

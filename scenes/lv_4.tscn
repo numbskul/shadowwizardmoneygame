@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="4_ql8fm"]
 [ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="5_qtkvq"]
 [ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="6_asibo"]
-[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://Scenes/moving_enemy.tscn" id="7_xujf1"]
+[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="7_xujf1"]
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="8_jtbt8"]
 [ext_resource type="PackedScene" uid="uid://c53004b6fpkwx" path="res://scenes/torch.tscn" id="9_tdwqy"]
 
@@ -34,11 +34,6 @@ offset_bottom = 2097.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.219254, 0.12474, 0.0463132, 1)
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-position = Vector2(57, 568)
-rotation = -1.48944
-color = Color(0.401968, 0.401968, 0.401968, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(1, 36)
@@ -141,6 +136,9 @@ position = Vector2(765, -2126)
 
 [node name="Torch13" parent="." instance=ExtResource("9_tdwqy")]
 position = Vector2(3309, -2126)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.403922, 0.403922, 0.403922, 1)
 
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]

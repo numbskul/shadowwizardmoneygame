@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://cbile8meg1ylw"]
 
-[ext_resource type="Script" path="res://scenes/lv_8.gd" id="1_xcmtd"]
+[ext_resource type="Script" path="res://scripts/lv_8.gd" id="1_xcmtd"]
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="1_y71fa"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="2_nxyg8"]
 [ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="2_rkph2"]
@@ -191,7 +191,7 @@ position = Vector2(794, -1982)
 [node name="Torch15" parent="." instance=ExtResource("9_ghi0x")]
 position = Vector2(-777, -1982)
 
-[connection signal="levelwon" from="HUD" to="player" method="_on_levelwon"]
 [connection signal="levelwon" from="HUD" to="player" method="_on_hud_levelwon"]
+[connection signal="levelwon" from="HUD" to="player" method="_on_levelwon"]
 [connection signal="gameover" from="player" to="HUD" method="_on_player_gameover"]
 [connection signal="updateHP" from="player" to="HUD" method="_on_player_update_hp"]
