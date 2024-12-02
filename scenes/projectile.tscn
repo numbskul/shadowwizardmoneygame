@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="1_ucvcs"]
 [ext_resource type="Texture2D" uid="uid://dkmdyo612v7ly" path="res://art/Bullet_sheet.png" id="2_5vvkj"]
 [ext_resource type="Texture2D" uid="uid://cumd8jx7fldli" path="res://art/Fun_Particle.png" id="3_f1sa7"]
-[ext_resource type="Material" uid="uid://cpkeglq3bbgnf" path="res://particles.tres" id="3_j3qvb"]
+[ext_resource type="Material" path="res://particles.tres" id="3_j3qvb"]
 [ext_resource type="AudioStream" uid="uid://b3uiub3xx5v16" path="res://sounds/magic_shoot_bounce_sfx (2).wav" id="4_sd5nt"]
 [ext_resource type="Texture2D" uid="uid://cg0jyo6xokxah" path="res://neutral_point_light.webp" id="5_fx7fw"]
 

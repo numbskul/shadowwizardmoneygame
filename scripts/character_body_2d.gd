@@ -87,3 +87,7 @@ func _on_levelwon():
 func _on_timer_timeout():
 	on_cooldown = false
 	pass # Replace with function body.
+
+
+func _on_gameover():
+	pass # Replace with function body.

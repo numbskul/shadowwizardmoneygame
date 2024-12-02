@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="2_kk6yg"]
 [ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="3_tp1bk"]
 [ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="4_wxlam"]
-[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="5_13l74"]
+[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://Scenes/moving_enemy.tscn" id="5_13l74"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="6_g05n2"]
 [ext_resource type="FontFile" uid="uid://y4vu0qq5k4k4" path="res://Jersey15-Regular.ttf" id="6_mm455"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="7_cvynk"]
