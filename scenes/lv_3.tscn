@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://bisetstpfu352"]
+[gd_scene load_steps=10 format=4 uid="uid://bisetstpfu352"]
 
 [ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="1_4eqtd"]
+[ext_resource type="Script" path="res://scenes/lv_3.gd" id="1_74hk3"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="2_xfjlx"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="3_w1k8j"]
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="4_i7bqx"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ijwy5dw1o2fj" path="res://scenes/stationary_enemy.tscn" id="7_ffb4e"]
 
 [node name="Node" type="Node"]
+script = ExtResource("1_74hk3")
 
 [node name="Player" parent="." instance=ExtResource("1_4eqtd")]
 z_index = 1
@@ -39,6 +41,7 @@ offset_bottom = 2661.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.219254, 0.12474, 0.0463132, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(57, 568)
@@ -95,7 +98,6 @@ position = Vector2(1510, 622)
 position = Vector2(1942, 301)
 
 [node name="StationaryEnemy4" parent="." instance=ExtResource("7_ffb4e")]
-visible = false
 position = Vector2(2099, 869)
 
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]
