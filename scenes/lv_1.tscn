@@ -160,3 +160,4 @@ position = Vector2(-510, 331)
 [connection signal="gameover" from="Player" to="." method="_on_player_gameover"]
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]
 [connection signal="updateHP" from="Player" to="HUD" method="_on_player_update_hp"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
