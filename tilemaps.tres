@@ -1,8 +1,14 @@
-[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://b8rp7h7cgr40f"]
+[gd_resource type="TileSet" load_steps=20 format=3 uid="uid://b8rp7h7cgr40f"]
 
 [ext_resource type="Texture2D" uid="uid://dpp0221xpa41m" path="res://art/floortile_sheet.png" id="1_gq15e"]
 [ext_resource type="Texture2D" uid="uid://boex8cj62bbox" path="res://art/wall_tileset.png" id="2_lxrvg"]
 [ext_resource type="Texture2D" uid="uid://c5gy8d2xjijix" path="res://art/wall.png" id="3_ep82i"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_b8o6c"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4poul"]
 texture = ExtResource("1_gq15e")
@@ -10,9 +16,13 @@ margins = Vector2i(1, 1)
 separation = Vector2i(2, 0)
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_b8o6c")
 1:0/0 = 0
+1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_b8o6c")
 2:0/0 = 0
+2:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_b8o6c")
 3:0/0 = 0
+3:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_b8o6c")
 4:0/0 = 0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6l4r6"]
@@ -103,6 +113,7 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_4poul")
 sources/1 = SubResource("TileSetAtlasSource_ewe3i")
 sources/2 = SubResource("TileSetAtlasSource_tfxw5")

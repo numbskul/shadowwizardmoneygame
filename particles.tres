@@ -1,0 +1,18 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://cpkeglq3bbgnf"]
+
+[resource]
+lifetime_randomness = 0.75
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 12.0
+angle_min = -221.2
+angle_max = 51.4
+initial_velocity_max = 83.93
+angular_velocity_min = -108.0
+angular_velocity_max = 120.86
+gravity = Vector3(0, 98, 0)
+linear_accel_min = -16.43
+linear_accel_max = 17.86
+hue_variation_min = -0.15
+hue_variation_max = 0.1

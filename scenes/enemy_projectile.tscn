@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/enemyprojectile.gd" id="1_lbc4j"]
 [ext_resource type="Texture2D" uid="uid://br371doudlaey" path="res://art/Enemy_Bullet_sheet.png" id="1_sp1cc"]
 [ext_resource type="Texture2D" uid="uid://754o827gxapj" path="res://art/Fun_Enemy_Particle.png" id="2_42mws"]
+[ext_resource type="Material" uid="uid://cpkeglq3bbgnf" path="res://particles.tres" id="3_wfkyq"]
 [ext_resource type="Texture2D" uid="uid://cg0jyo6xokxah" path="res://neutral_point_light.webp" id="4_h8te1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bmmr0"]
@@ -72,23 +73,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pp1lt"]
-lifetime_randomness = 0.75
-particle_flag_align_y = true
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 12.0
-angle_min = -221.2
-angle_max = 51.4
-initial_velocity_max = 83.93
-angular_velocity_min = -108.0
-angular_velocity_max = 120.86
-gravity = Vector3(0, 98, 0)
-linear_accel_min = -16.43
-linear_accel_max = 17.86
-hue_variation_min = -0.15
-hue_variation_max = 0.1
-
 [node name="EnemyProjectile" type="CharacterBody2D"]
 script = ExtResource("1_lbc4j")
 
@@ -106,7 +90,7 @@ frame_progress = 0.392291
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 80
-process_material = SubResource("ParticleProcessMaterial_pp1lt")
+process_material = ExtResource("3_wfkyq")
 texture = ExtResource("2_42mws")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
