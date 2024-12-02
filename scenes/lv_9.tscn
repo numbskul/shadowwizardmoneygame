@@ -37,7 +37,6 @@ color = Color(0, 0, 0, 1)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(57, 568)
 rotation = -1.48944
-color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_08e6i")]
 z_index = 1
@@ -122,9 +121,6 @@ position = Vector2(-333, -228)
 position = Vector2(-636, -474)
 
 [node name="MovingEnemy11" parent="." instance=ExtResource("7_mtd2l")]
-position = Vector2(-394, -864)
-
-[node name="MovingEnemy12" parent="." instance=ExtResource("7_mtd2l")]
 position = Vector2(-394, -864)
 
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
