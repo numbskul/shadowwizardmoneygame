@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://b865ewcx0blcr"]
 
-[ext_resource type="Script" path="res://scenes/lv_9.gd" id="1_0pfku"]
+[ext_resource type="Script" path="res://scripts/lv_9.gd" id="1_0pfku"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="1_ugolx"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="2_m3xcp"]
 [ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="3_08e6i"]

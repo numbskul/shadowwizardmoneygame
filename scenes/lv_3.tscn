@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://bisetstpfu352"]
 
 [ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="1_4eqtd"]
-[ext_resource type="Script" path="res://scenes/lv_3.gd" id="1_74hk3"]
+[ext_resource type="Script" path="res://scripts/lv_3.gd" id="1_74hk3"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="2_xfjlx"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="3_w1k8j"]
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="4_i7bqx"]
