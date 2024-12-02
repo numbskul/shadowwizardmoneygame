@@ -62,6 +62,7 @@ position = Vector2(813, -509)
 [node name="MovingEnemy" parent="." instance=ExtResource("5_y83ub")]
 position = Vector2(2204, 3)
 
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
 [connection signal="gameover" from="Player" to="HUD" method="_on_player_gameover"]
 [connection signal="updateHP" from="Player" to="HUD" method="_on_player_update_hp"]
 [connection signal="levelwon" from="HUD" to="Player" method="_on_levelwon"]
