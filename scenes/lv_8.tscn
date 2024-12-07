@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/lv_8.gd" id="1_xcmtd"]
 [ext_resource type="TileSet" uid="uid://b8rp7h7cgr40f" path="res://tilemaps.tres" id="1_y71fa"]
 [ext_resource type="AudioStream" uid="uid://dytl671k8jrlw" path="res://sounds/siwen_game_music.wav" id="2_nxyg8"]
-[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://scenes/moving_enemy.tscn" id="2_rkph2"]
+[ext_resource type="PackedScene" uid="uid://de7rulgai1gm2" path="res://Scenes/moving_enemy.tscn" id="2_rkph2"]
 [ext_resource type="PackedScene" uid="uid://bj1bn2pka11pe" path="res://scenes/HUD.tscn" id="2_yr8nb"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player.gd" id="3_n1iu1"]
 [ext_resource type="PackedScene" uid="uid://cxxdme4ellchi" path="res://scenes/playerv2.tscn" id="3_vefys"]
